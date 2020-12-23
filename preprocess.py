@@ -16,21 +16,46 @@ def get_vocab():
        
     return char2idx
 
-def get_path():
-    default = "./data/sample_data/"
+def get_path(folder_path = "./data/sample_data/"):
+    paths = []
     with open("./data/sample_data/label.txt", "r") as f:
         x = f.readlines()
         for sen in x:
             path, label = sen.split("\t")
             file_name = path.split("\\")[-1]
-            path = default + file_name
-            
-            print(path)
-#print(x)
+            path = folder_path + file_name
+            paths.append(path)
+
+    return paths
+
+
+def get_channel_from_pcm(paths):
+    stack = []
+    for path in paths:
+        with open(path, "rb") as f:
+            buf = f.read()
+            data = np.frombuffer(buf, dtype = 'int16')
+            L = data[:: 2]
+            R = data[1 :: 2]
+    
+            temp = np.vstack([L,R])
+            print(temp.shape)
+
+            stack.append(temp)
+
+    return stack
 
 if __name__ == "__main__":
     char2idx = get_vocab()
     print(char2idx)
+    paths = get_path()
+    data = get_channel_from_pcm(paths)
+
+    print(len(data))
+    #print(data)
+
+
+    '''
     with open("./data/sample_data/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_00001.PCM", "rb") as f:
         buf = f.read ()
         data = np.frombuffer (buf, dtype = 'int16')
@@ -47,3 +72,4 @@ if __name__ == "__main__":
     axs [1] .plot (t, R[: len(t)])
     plt.savefig("./test.png")
     plt.show ()
+    '''
