@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from model.frontend import CustomFrontend
+import torch
 
 def get_vocab():
     path = "./data/sample_data/label.txt"
@@ -39,7 +41,7 @@ def get_channel_from_pcm(paths):
             R = data[1 :: 2]
     
             temp = np.vstack([L,R])
-            print(temp.shape)
+            temp = torch.Tensor(temp).transpose(0,1)
 
             stack.append(temp)
 
@@ -47,14 +49,18 @@ def get_channel_from_pcm(paths):
 
 if __name__ == "__main__":
     char2idx = get_vocab()
-    print(char2idx)
+    #print(char2idx)
     paths = get_path()
     data = get_channel_from_pcm(paths)
+    print(data[0].shape)
+    data[1] = data[1].unsqueeze(0)
+    data[1].shape
 
-    print(len(data))
     #print(data)
-
-
+    frontend = CustomFrontend()
+    a, length = frontend(data[1], torch.Tensor([data[1].shape[1], data[1].shape[1]]))
+    print(a, length)
+    print(a.shape, length.shape)
     '''
     with open("./data/sample_data/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_00001.PCM", "rb") as f:
         buf = f.read ()

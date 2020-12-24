@@ -129,3 +129,4 @@ class CustomFrontend(AbsFrontend):
         # input_stft: (..., F, 2) -> (..., F)
         input_stft = ComplexTensor(input_stft[..., 0], input_stft[..., 1])
         return input_stft, feats_lens
+

@@ -7,6 +7,8 @@ from espnet2.asr.ctc import CTC
 from espnet2.asr.specaug.specaug import SpecAug
 from espnet2.asr.frontend.default import DefaultFrontend
 
+from model.frontend import CustomFrontend
+
 input_size = 100
 vocab_size = 50
 '''
