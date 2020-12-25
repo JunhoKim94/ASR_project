@@ -8,9 +8,14 @@ from espnet2.asr.specaug.specaug import SpecAug
 from espnet2.asr.frontend.default import DefaultFrontend
 
 from model.frontend import CustomFrontend
+import torch
 
 input_size = 100
 vocab_size = 50
+#Hyper parameters
+epochs = 50
+batch_size = 16
+lr = 1e-4
 '''
 vocab_size: int,
 token_list: Union[Tuple[str, ...], List[str]],
@@ -51,3 +56,14 @@ model = ESPnetASRModel(vocab_size = vocab_size,
                             rnnt_decoder = None)
 
 print(model)
+
+optimizer = torch.optim.Adam(model.parameters(), lr = lr)
+
+
+total = 10
+
+for epoch in range(epochs):
+
+    for iteration in range(total):
+
+        

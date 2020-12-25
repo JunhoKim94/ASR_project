@@ -6,7 +6,7 @@ import torch
 def get_vocab():
     path = "./data/sample_data/label.txt"
     char2idx = dict()
-    with open(path, "r") as f:
+    with open(path, "r", encoding = "UTF-8") as f:
         x = f.readlines()
         for sen in x:
             path, label = sen.split("\t")
@@ -20,7 +20,7 @@ def get_vocab():
 
 def get_path(folder_path = "./data/sample_data/"):
     paths = []
-    with open("./data/sample_data/label.txt", "r") as f:
+    with open("./data/sample_data/label.txt", "r", encoding = "UTF-8") as f:
         x = f.readlines()
         for sen in x:
             path, label = sen.split("\t")
@@ -37,8 +37,8 @@ def get_channel_from_pcm(paths):
         with open(path, "rb") as f:
             buf = f.read()
             data = np.frombuffer(buf, dtype = 'int16')
-            L = data[:: 2]
-            R = data[1 :: 2]
+            L = data[::2]
+            R = data[1::2]
     
             temp = np.vstack([L,R])
             temp = torch.Tensor(temp).transpose(0,1)
@@ -57,16 +57,18 @@ if __name__ == "__main__":
     data[1].shape
 
     #print(data)
-    frontend = CustomFrontend()
-    a, length = frontend(data[1], torch.Tensor([data[1].shape[1], data[1].shape[1]]))
-    print(a, length)
-    print(a.shape, length.shape)
+
+    #print(data)
+    #frontend = CustomFrontend()
+    #a, length = frontend(data[1], torch.Tensor([data[1].shape[1], data[1].shape[1]]))
+    #print(a, length)
+    #print(a.shape, length.shape)
     '''
     with open("./data/sample_data/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_00001.PCM", "rb") as f:
-        buf = f.read ()
-        data = np.frombuffer (buf, dtype = 'int16')
-        L = data [:: 2]
-        R = data [1 :: 2]
+        buf = f.read()
+        data = np.frombuffer(buf, dtype = 'int16')
+        L = data[::2]
+        R = data[1::2]
 
     print(L, R)
     print(len(L), len(R))
@@ -74,8 +76,8 @@ if __name__ == "__main__":
 
     t = np.arange(0, 1., 1/sample_rate)
     fig, axs = plt.subplots (2,1)
-    axs [0] .plot (t, L[: len(t)])
-    axs [1] .plot (t, R[: len(t)])
+    axs[0].plot(t, L[: len(t)])
+    axs[1].plot(t, R[: len(t)])
     plt.savefig("./test.png")
-    plt.show ()
+    pltshow()
     '''
