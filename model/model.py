@@ -25,74 +25,84 @@ from espnet2.asr.specaug.abs_specaug import AbsSpecAug
 from espnet2.layers.abs_normalize import AbsNormalize
 from espnet2.torch_utils.device_funcs import force_gatherable
 from espnet2.train.abs_espnet_model import AbsESPnetModel
+from espnet.nets.pytorch_backend.e2e_asr_transformer import E2E
 
 
 
-
-class ASRModel(ESPnetASRModel):
+class ASRModel(torch.nn.Module):
     def __init__(
         self,
+        input_size: int,
         vocab_size: int,
         token_list: Union[Tuple[str, ...], List[str]],
         frontend: Optional[AbsFrontend],
         specaug: Optional[AbsSpecAug],
         normalize: Optional[AbsNormalize],
-        encoder: AbsEncoder,
-        decoder: AbsDecoder,
-        ctc: CTC,
-        rnnt_decoder: None,
-        ctc_weight: float = 0.5,
-        ignore_id: int = -1,
-        lsm_weight: float = 0.0,
-        length_normalized_loss: bool = False,
-        report_cer: bool = True,
-        report_wer: bool = True,
-        sym_space: str = "<space>",
-        sym_blank: str = "<blank>",
+        config
     ):
-        super(ASRModel, self).__init__(vocab_size, 
-                                    token_list, 
-                                    frontend, 
-                                    specaug, 
-                                    normalize, 
-                                    encoder, 
-                                    decoder, 
-                                    ctc, 
-                                    rnnt_decoder, 
-                                    ctc_weight, 
-                                    ignore_id, 
-                                    lsm_weight, 
-                                    length_normalized_loss, 
-                                    report_cer, 
-                                    report_wer, 
-                                    sym_space, 
-                                    sym_blank)
+        super().__init__()
 
-    def recognize(
+        self.sos = vocab_size - 1
+        self.eos = vocab_size - 1
+        self.vocab_size = vocab_size
+        self.ignore_id = config.ignore_id
+        self.ctc_weight = config.mtlalpha
+        self.token_list = config.char_list.copy()
+
+        self.frontend = frontend
+        self.specaug = specaug
+        self.normalize = normalize
+
+        self.model = E2E(input_size, vocab_size, config)
+
+    def _extract_feats(
+        self, speech: torch.Tensor, speech_lengths: torch.Tensor
+    ) -> Tuple[torch.Tensor, torch.Tensor]:
+        assert speech_lengths.dim() == 1, speech_lengths.shape
+
+        # for data-parallel
+        speech = speech[:, : speech_lengths.max()]
+
+        if self.frontend is not None:
+            # Frontend
+            #  e.g. STFT and Feature extract
+            #       data_loader may send time-domain signal in this case
+            # speech (Batch, NSamples) -> feats: (Batch, NFrames, Dim)
+            feats, feats_lengths = self.frontend(speech, speech_lengths)
+        else:
+            # No frontend and no feature extract
+            feats, feats_lengths = speech, speech_lengths
+
+        # 2. Data augmentation for spectrogram
+        if self.specaug is not None and self.training:
+            feats, feats_lengths = self.specaug(feats, feats_lengths)
+
+        # 3. Normalization for feature: e.g. Global-CMVN, Utterance-CMVN
+        if self.normalize is not None:
+            feats, feats_lengths = self.normalize(feats, feats_lengths)
+            if self.adddiontal_utt_mvn is not None:
+                feats, feats_lengths = self.adddiontal_utt_mvn(feats, feats_lengths)
+
+
+        return feats, feats_lengths
+
+    def forward(
         self,
         speech: torch.Tensor,
-        speech_lengths: torch.Tensor
-        ):
-        
-        """
-        Frontend + Encoder. Note that this method is used by asr_inference.py
+        speech_lengths: torch.Tensor,
+        text: torch.Tensor,
+        text_lengths: torch.Tensor,
+    ) -> Tuple[torch.Tensor, Dict[str, torch.Tensor], torch.Tensor]:
 
-        Args:
-            speech: (Batch, Length, ...)
-            speech_lengths: (Batch, )
-        """
+        feats, feats_length = self._extract_feats(speech, speech_lengths)
+        loss = self.model(feats, feats_length, text)
 
-        encoder_out, encoder_out_lens = self.encode(speech, speech_lengths)
-        
-        ys_in_pad = torch.zeros((speech.shape[0], 1)).fill_(self.sos)
-        # 1. Forward decoder
-        state = None
-        for i in range(20):
-            decoder_out, state = self.decoder.batch_score(
-                ys_in_pad, state, encoder_out
-            )
-            decoder_out = torch.topk(decoder_out, k = 1, dim = -1)[0]
-            ys_in_pad = torch.cat([ys_in_pad, decoder_out], dim = 1)
+        return loss
+    
+    def recognize(self, speech, speech_lengths, recog_args, char_list=None, rnnlm=None, use_jit=False):
 
-        return ys_in_pad
+        feats, feats_length = self._extract_feats(speech, speech_lengths)
+        #feats = feats.squeeze(0).detach().cpu().numpy()
+        hypo = self.model.recognize(feats, recog_args, self.token_list)
 
+        return hypo
