@@ -1,4 +1,3 @@
-from espnet2.asr.espnet_model import ESPnetASRModel
 from espnet.nets.pytorch_backend.transformer.add_sos_eos import add_sos_eos
 from contextlib import contextmanager
 from distutils.version import LooseVersion
@@ -25,7 +24,8 @@ from espnet2.asr.specaug.abs_specaug import AbsSpecAug
 from espnet2.layers.abs_normalize import AbsNormalize
 from espnet2.torch_utils.device_funcs import force_gatherable
 from espnet2.train.abs_espnet_model import AbsESPnetModel
-from espnet.nets.pytorch_backend.e2e_asr_transformer import E2E
+#from espnet.nets.pytorch_backend.e2e_asr_transformer import E2E
+from model.e2e import E2E
 
 
 
@@ -54,6 +54,7 @@ class ASRModel(torch.nn.Module):
         self.normalize = normalize
 
         self.model = E2E(input_size, vocab_size, config)
+
 
     def _extract_feats(
         self, speech: torch.Tensor, speech_lengths: torch.Tensor
@@ -96,13 +97,17 @@ class ASRModel(torch.nn.Module):
 
         feats, feats_length = self._extract_feats(speech, speech_lengths)
         loss = self.model(feats, feats_length, text)
+        acc = self.model.acc
 
-        return loss
+        return loss, acc
     
     def recognize(self, speech, speech_lengths, recog_args, char_list=None, rnnlm=None, use_jit=False):
 
         feats, feats_length = self._extract_feats(speech, speech_lengths)
         #feats = feats.squeeze(0).detach().cpu().numpy()
-        hypo = self.model.recognize(feats, recog_args, self.token_list)
+        results = []
+        for feat in feats:
+            hypo = self.model.recognize(feat, recog_args, self.token_list)
+            results.append(hypo[0]["ypred"])
 
-        return hypo
+        return results

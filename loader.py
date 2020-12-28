@@ -69,11 +69,11 @@ class Data_Loader:
         return torch_batch, trg_batch, seq_length, trg_length
 
 class Batch_Loader:
-    def __init__(self, batch_size, device):
+    def __init__(self, batch_size, device, path, trg, char2idx):
 
         self.batch_size = batch_size
         self.device = device
-        self.path, self.trg, self.char2idx = preprocess_data()
+        self.path, self.trg, self.char2idx = path, trg, char2idx
         self.idx = 0
 
     def __len__(self):

@@ -18,18 +18,39 @@ from espnet.bin.asr_train import get_parser
 from config import *
 
 
-device = torch.device("cuda:1")
+device = torch.device("cuda:0")
 #device = torch.device("cpu")
 input_size = 80
 #Hyper parameters
 epochs = 80
-batch_size = 10
+batch_size = 1
 lr = 1e-3
+'''
+path, trg, char2idx = preprocess_data()
+
+def split_path(path, trg, ratio = 0.1):
+    
+    train_path, train_trg = [], []
+    val_path, val_trg = [], []
+    for idx in range(len(path)):
+        if random.random() < ratio:
+            val_path.append(path[idx])
+            val_trg.append(trg[idx])
+        else:
+            train_path.append(path[idx])
+            train_trg.append(trg[idx])
+    
+    return train_path, train_trg, val_path, val_trg
+
+
+train_path, train_trg, val_path, val_trg = split_path(path, trg, 0.1)
+'''
 
 #Model 선언을 위해 필요한 모듈들
 #vocab size(character 와 token 단위 중 선택해야 함.)
-#dataloader = Data_Loader(batch_size, device)
-dataloader = Batch_Loader(batch_size, device)
+dataloader = Data_Loader(batch_size, device)
+#dataloader = Batch_Loader(batch_size, device, train_path, train_trg, char2idx)
+#valloader = Batch_Loader(batch_size, device, val_path, val_trg, char2idx)
 
 token_list = []
 for key, value in dataloader.char2idx.items():
@@ -70,19 +91,15 @@ total = len(dataloader) // batch_size + 1
 for epoch in range(epochs):
     epoch_loss = 0
     epoch_acc = 0
-    epoch_cer = 0
-    epoch_wer = 0
-    device = torch.device("cuda:1")
+    device = torch.device("cuda:0")
     model.to(device)
     for iteration in range(1, total):
         train_batch = dataloader.get_batch()
 
-        loss, cer, wer, acc= model(**train_batch)
+        loss, acc = model(**train_batch)
         
         epoch_loss += loss.item()
         epoch_acc += acc
-        epoch_cer += cer
-        epoch_wer += wer
 
         optimizer.zero_grad()
         loss.backward()
@@ -91,8 +108,6 @@ for epoch in range(epochs):
 
     epoch_loss /= total
     epoch_acc /= total
-    epoch_cer /= total
-    epoch_wer /= total
 
     if epoch % 2 == 0:
         current_time = round((time.time() - st) / 3600 , 4)
@@ -101,7 +116,6 @@ for epoch in range(epochs):
         model.to(device)
         trg = train_batch["text"].to(device)
         ys_hat = model.recognize(train_batch["speech"].to(device), train_batch["speech_lengths"].to(device), recog_config)
-        print(ys_hat.shape)
 
         temp1, temp2 = "", ""
         for c, t in zip(ys_hat[0], trg[0]):
