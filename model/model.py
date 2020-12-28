@@ -96,10 +96,10 @@ class ASRModel(torch.nn.Module):
     ) -> Tuple[torch.Tensor, Dict[str, torch.Tensor], torch.Tensor]:
 
         feats, feats_length = self._extract_feats(speech, speech_lengths)
-        loss = self.model(feats, feats_length, text)
-        acc = self.model.acc
+        loss, ret_dict = self.model(feats, feats_length, text)
+        #acc = self.model.acc
 
-        return loss, acc
+        return loss, ret_dict
     
     def recognize(self, speech, speech_lengths, recog_args, char_list=None, rnnlm=None, use_jit=False):
 
@@ -108,6 +108,6 @@ class ASRModel(torch.nn.Module):
         results = []
         for feat in feats:
             hypo = self.model.recognize(feat, recog_args, self.token_list)
-            results.append(hypo[0]["ypred"])
-
+            results.append(hypo[0]["yseq"])
+            
         return results

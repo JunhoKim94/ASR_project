@@ -232,6 +232,7 @@ class E2E(ASRInterface, torch.nn.Module):
             loss_ctc_data = float(loss_ctc)
 
         loss_data = float(self.loss)
+        ret_dict = {"cer" : cer, "wer" : wer, "acc" : self.acc}
         if loss_data < CTC_LOSS_THRESHOLD and not math.isnan(loss_data):
             self.reporter.report(
                 loss_ctc_data, loss_att_data, self.acc, cer_ctc, cer, wer, loss_data
@@ -239,7 +240,7 @@ class E2E(ASRInterface, torch.nn.Module):
         else:
             logging.warning("loss (=%f) is not correct", loss_data)
             
-        return self.loss
+        return self.loss, ret_dict
 
     def scorers(self):
         """Scorers."""

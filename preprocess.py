@@ -4,6 +4,8 @@ from model.frontend import CustomFrontend
 import torch
 from loader import *
 import wave
+import os
+
 
 def get_vocab():
     path = "./data/sample_data/label.txt"
@@ -50,6 +52,7 @@ def preprocess_data():
     ret_paths = []
     trg = []
     char2idx = {"PAD" : -1, "-" : 0}
+    delete = 0
     for path in paths:
         with open(path, "r", encoding= "UTF-8") as f:
             x = f.readlines()
@@ -60,8 +63,14 @@ def preprocess_data():
                     a = p[4].split(".")
                     p[4] = a[0] + ".pcm"
 
-                ret_paths.append(f"./data/{p[1]}/{p[2]}/{p[3]}/{p[4]}")
+                real_path = f"./data/{p[1]}/{p[2]}/{p[3]}/{p[4]}"
+                if not os.path.isfile(real_path):
+                    delete += 1
+                    continue
+                
+                ret_paths.append(real_path)
                 trg.append(label[:-1])
+                
                 for c in label[:-1]:
                     if c in char2idx:
                         continue
@@ -70,6 +79,9 @@ def preprocess_data():
     ret_trg = []
     for sen in trg:
         ret_trg.append([char2idx[c] for c in sen])
+
+    print(delete, "paths are deleted")
+    print(len(ret_paths) ,"data preprocessed")
 
     return ret_paths, ret_trg, char2idx
 
@@ -110,9 +122,7 @@ def plot_wav(path):
     plt.show()        
 
 if __name__ == "__main__":
-    char2idx, trg = get_vocab()
-    print(trg)
-    #print(char2idx)
+
     '''
     paths = get_path()
     data = get_channel_from_pcm(paths)
@@ -127,4 +137,4 @@ if __name__ == "__main__":
     print(a, length)
     print(a.shape, length.shape)
     '''
-    wave.open("./data/sample_data/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_00001.PCM", "rb")
+    
