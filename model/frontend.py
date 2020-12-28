@@ -88,11 +88,14 @@ class CustomFrontend(AbsFrontend):
         else:
             input_stft = ComplexTensor(input[..., 0], input[..., 1])
             feats_lens = input_lengths
+
+        
         # 2. [Option] Speech enhancement
         if self.frontend is not None:
             assert isinstance(input_stft, ComplexTensor), type(input_stft)
             # input_stft: (Batch, Length, [Channel], Freq)
             input_stft, _, mask = self.frontend(input_stft, feats_lens)
+
 
         # 3. [Multi channel case]: Select a channel
         if input_stft.dim() == 4:
