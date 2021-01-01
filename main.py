@@ -19,79 +19,47 @@ from config import *
 from tqdm import tqdm
 import os
 import pickle
+from utils import *
+from apex import amp
+
+def adjust_learning_rate(optimizer, warmup_count):
+
+    if warmup_count < 4752:
+        lr = 1e-5 * (warmup_count / 4752)
+    else:
+        lr = 1e-5 * (1 - warmup_count / 47520)
+
+    for param_group in optimizer.param_groups:
+        param_group['lr'] = lr
 
 
-device = torch.device("cuda")
+device = torch.device("cuda:2")
 #device = torch.device("cpu")
 input_size = 80
 #Hyper parameters
 epochs = 80
-batch_size = 16
-lr = 1e-3
+batch_size = 8
+lr = 5e-4
 
-def span_text(model, train_batch):
-    device = torch.device("cpu")
-    model.to(device)
-    trg = train_batch["text"].to(device)
-    ys_hat = model.recognize(train_batch["speech"].to(device), train_batch["speech_lengths"].to(device), recog_config)
-
-    temp1, temp2 = "", ""
-    for c, t in zip(ys_hat[0], trg[0]):
-        #print(token_list[c], token_list[t])
-        if c != -1:
-            temp1 += token_list[c]
-        if t != -1:
-            temp2 += token_list[t]
-
-    print(temp1, temp2)
-
-def val_score(model, val_loader):
-    
-    model.eval()
-    val_cer = 0
-    val_acc = 0
-    val_wer = 0
-    for i in range(len(val_loader)):
-        val_batch = val_loader.get_batch()
-
-        loss, ret_dict = model(**val_batch)
-
-        val_cer += ret_dict["cer"]
-        val_wer += ret_dict["wer"]
-        val_acc += ret_dict["acc"]
-    
-    return val_cer / len(val_loader) , val_wer / len(val_loader), val_acc / len(val_loader)
-
+SAMPLE_RATE = 16000
 
 
 path, trg, char2idx = preprocess_data()
-
-def split_path(path, trg, ratio = 0.1):
-    
-    train_path, train_trg = [], []
-    val_path, val_trg = [], []
-    for idx in range(len(path)):
-        if random.random() < ratio:
-            val_path.append(path[idx])
-            val_trg.append(trg[idx])
-        else:
-            train_path.append(path[idx])
-            train_trg.append(trg[idx])
-    
-    return train_path, train_trg, val_path, val_trg
-
-
-train_path, train_trg, val_path, val_trg = split_path(path, trg, 0.1)
-ret = {"train_path" : train_path, "train_trg" : train_trg, "val_path" : val_path, "val_trg" : val_trg}
-with open("./train.pickle","wb") as f:
-    pickle.dump(ret, f)
+train_path, train_trg, val_path, val_trg,test_path, test_trg = split_path(path, trg, 0.025)
 
 #Model 선언을 위해 필요한 모듈들
 #vocab size(character 와 token 단위 중 선택해야 함.)
 #dataloader = Data_Loader(batch_size, device)
 #val_loader = Data_Loader(batch_size, device)
+'''
 dataloader = Batch_Loader(batch_size, device, train_path, train_trg, char2idx)
 val_loader = Batch_Loader(batch_size, device, val_path, val_trg, char2idx)
+test_loader = Batch_Loader(batch_size, device, test_path, test_trg, char2idx)
+'''
+dataloader = Batch_Loader(batch_size, device, val_path, val_trg, char2idx)
+val_loader = Batch_Loader(batch_size, device, val_path, val_trg, char2idx)
+test_loader = Batch_Loader(batch_size, device, test_path, test_trg, char2idx)
+
 
 token_list = []
 for key, value in dataloader.char2idx.items():
@@ -104,6 +72,8 @@ print(vocab_size)
 frontend = CustomFrontend(fs = 16000,
                             n_fft= 512,
                             normalized = True,
+                            hop_length= int(0.01 * SAMPLE_RATE),
+                            win_length= int(0.03 * SAMPLE_RATE), 
                             n_mels = 80)
 #Data augmentation을 담당하는 class --> 시간적 비용이 많을 시 생략할것
 #specaug = SpecAug()
@@ -123,10 +93,11 @@ model = ASRModel(input_size = input_size,
                 normalize = normalize,
                 config = config)
 
+
 #model.to(device)
 #model = torch.nn.DataParallel(model)
 model.to(device)
-
+#save_text(model, test_loader, recog_config, token_list)
 optimizer = torch.optim.Adam(model.parameters(), lr = lr)
 
 st = time.time()
@@ -136,6 +107,7 @@ for epoch in range(epochs):
     epoch_loss = 0
     epoch_acc = 0
     model.train()
+    model.to(device)
     for iteration in tqdm(range(1, total)):
         train_batch = dataloader.get_batch()
 
@@ -146,6 +118,7 @@ for epoch in range(epochs):
         epoch_acc += acc
 
         optimizer.zero_grad()
+
         loss.backward()
 
         optimizer.step()
@@ -161,5 +134,6 @@ for epoch in range(epochs):
         print(f"epoch : {epoch} | epoch loss : {epoch_loss} | acc : {epoch_acc} | val acc : {val_acc} | cer : {cer} | wer: {wer} | time : {current_time}")
         if best_acc < val_acc:
             best_acc = val_acc
-            torch.save(model.state_dict(), "./best.pt")
+            save_text(model, test_loader, recog_config, token_list, save_path = "result_apex.txt")
+            torch.save(model.state_dict(), "./best_apex.pt")
 

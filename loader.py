@@ -39,12 +39,10 @@ class Data_Loader:
                     "speech_lengths" : seq_length.to(self.device), 
                     "text" : trg.to(self.device), 
                     "text_lengths" : trg_length.to(self.device)}
-        '''
-        speech: torch.Tensor,
-        speech_lengths: torch.Tensor,
-        text: torch.Tensor,
-        text_lengths: torch.Tensor,
-        '''
+        
+        if (self.idx * self.batch_size) >= len(self.path):
+            self.idx = 0
+            
         return ret_dict
     def padding(self, data, trg):
         '''
@@ -101,6 +99,9 @@ class Batch_Loader:
                     "speech_lengths" : seq_length.to(self.device), 
                     "text" : trg.to(self.device), 
                     "text_lengths" : trg_length.to(self.device)}
+
+        if (self.idx * self.batch_size) >= len(self.path):
+            self.idx = 0
 
         return ret_dict
 

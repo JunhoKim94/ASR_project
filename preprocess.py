@@ -5,7 +5,7 @@ import torch
 from loader import *
 import wave
 import os
-
+import hgtk
 
 def get_vocab():
     path = "./data/sample_data/label.txt"
@@ -44,7 +44,7 @@ def get_path(folder_path = "./data/sample_data/"):
 
     return paths
 
-def preprocess_data():
+def preprocess_data(char = True):
     paths = ["./data/2020_자유대화_Hackarthon_학습DB/001.일반남녀/000.PCM2TEXT/2020_일반남녀_학습DB_PCM2TEXT.txt",
             "./data/2020_자유대화_Hackarthon_학습DB/002.노인남녀(시니어)/000.PCM2TEXT/2020_시니어_학습DB_PCM2TEXT.txt",
             "./data/2020_자유대화_Hackarthon_학습DB/003.소아남녀/000.PCM2TEXT/2020_소아남녀_학습DB_PCM2TEXT.txt",
@@ -68,6 +68,9 @@ def preprocess_data():
                     delete += 1
                     continue
                 
+                if char:
+                    label = hgtk.text.decompose(label)
+
                 ret_paths.append(real_path)
                 trg.append(label[:-1])
                 
