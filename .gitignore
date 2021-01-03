@@ -1,3 +1,6 @@
 data/
 *.PCM
 *.pcm
+save_model/
+*.pt
+*.pickle

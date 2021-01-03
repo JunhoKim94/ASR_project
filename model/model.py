@@ -26,8 +26,10 @@ from espnet2.torch_utils.device_funcs import force_gatherable
 from espnet2.train.abs_espnet_model import AbsESPnetModel
 #from espnet.nets.pytorch_backend.e2e_asr_transformer import E2E
 from model.e2e import E2E
+from model.frontend import CustomFrontend
+from espnet2.asr.specaug.specaug import SpecAug
 
-
+SAMPLE_RATE = 16000
 
 class ASRModel(torch.nn.Module):
     def __init__(
@@ -35,9 +37,6 @@ class ASRModel(torch.nn.Module):
         input_size: int,
         vocab_size: int,
         token_list: Union[Tuple[str, ...], List[str]],
-        frontend: Optional[AbsFrontend],
-        specaug: Optional[AbsSpecAug],
-        normalize: Optional[AbsNormalize],
         config
     ):
         super().__init__()
@@ -49,9 +48,16 @@ class ASRModel(torch.nn.Module):
         self.ctc_weight = config.mtlalpha
         self.token_list = config.char_list.copy()
 
-        self.frontend = frontend
-        self.specaug = specaug
-        self.normalize = normalize
+        self.specaug = None
+        self.normalize = None
+
+        self.frontend = CustomFrontend(fs = SAMPLE_RATE,
+                            n_fft= 512,
+                            normalized = True,
+                            hop_length= int(0.01 * SAMPLE_RATE),
+                            win_length= int(0.03 * SAMPLE_RATE), 
+                            n_mels = 80)
+
 
         self.model = E2E(input_size, vocab_size, config)
 
@@ -107,7 +113,7 @@ class ASRModel(torch.nn.Module):
         #feats = feats.squeeze(0).detach().cpu().numpy()
         results = []
         for feat in feats:
-            hypo = self.model.recognize(feat, recog_args, self.token_list)
+            hypo = self.model.recognize(feat, recog_args, char_list =  self.token_list)
             results.append(hypo[0]["yseq"])
             
         return results

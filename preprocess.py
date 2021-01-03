@@ -6,6 +6,7 @@ from loader import *
 import wave
 import os
 import hgtk
+from utils import *
 
 def get_vocab():
     path = "./data/sample_data/label.txt"
@@ -68,8 +69,7 @@ def preprocess_data(char = True):
                     delete += 1
                     continue
                 
-                if char:
-                    label = hgtk.text.decompose(label)
+                label = hgtk.text.decompose(label)
 
                 ret_paths.append(real_path)
                 trg.append(label[:-1])
@@ -79,12 +79,19 @@ def preprocess_data(char = True):
                         continue
                     char2idx[c] = len(char2idx)
 
+    print(char2idx)
     ret_trg = []
     for sen in trg:
         ret_trg.append([char2idx[c] for c in sen])
 
     print(delete, "paths are deleted")
     print(len(ret_paths) ,"data preprocessed")
+
+    with open("./char2idx.pickle", "wb") as f:
+        pickle.dump(char2idx, f)
+
+    split_path(ret_paths, ret_trg, ratio = 0.05)
+
 
     return ret_paths, ret_trg, char2idx
 

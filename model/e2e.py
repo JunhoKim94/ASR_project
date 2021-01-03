@@ -317,7 +317,7 @@ class E2E(ASRInterface, torch.nn.Module):
         else:
             hyp = {"score": 0.0, "yseq": [y]}
         if lpz is not None:
-            ctc_prefix_score = CTCPrefixScore(lpz.detach().numpy(), 0, self.eos, numpy)
+            ctc_prefix_score = CTCPrefixScore(lpz.detach().cpu().numpy(), 0, self.eos, numpy)
             hyp["ctc_state_prev"] = ctc_prefix_score.initial_state()
             hyp["ctc_score_prev"] = 0.0
             if ctc_weight != 1.0:
