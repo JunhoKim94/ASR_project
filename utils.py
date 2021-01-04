@@ -4,7 +4,16 @@ import pickle
 from tqdm import tqdm
 import hgtk
 import nltk
-import Levenshtein as edit
+import Levenshtein as Lev 
+
+def char_distance(ref, hyp):
+    ref = ref.replace(' ', '') 
+    hyp = hyp.replace(' ', '') 
+
+    dist = Lev.distance(hyp, ref)
+    length = len(ref.replace(' ', ''))
+
+    return dist, length 
 
 def split_path(path, trg, ratio = 0.1, save = False):
     
@@ -32,44 +41,56 @@ def split_path(path, trg, ratio = 0.1, save = False):
 
     return ret
 
-def span_text(model, train_batch, recog_config, f, token_list):
+def span_text(model, train_batch, recog_config, f, token_list, char):
     trg = train_batch["text"]
     ys_hat = model.recognize(train_batch["speech"], train_batch["speech_lengths"], recog_config)
 
-    score = 0
+    total_dist = 0
+    total_length = 0
     for ys, tr in zip(ys_hat, trg):
         sen1, sen2 = "", ""
         for c in ys:
             #print(token_list[c], token_list[t])
-            if (c != -1) and (c != token_list[-1]):
+            if (c != -1) and (c != len(token_list) - 1):
                 sen1 += token_list[c]
         for t in tr:
-            if (t != -1) and (t != token_list[-1]):
+            if (t != -1) and (t != len(token_list) - 1):
                 sen2 += token_list[t]
 
-        sen1, sen2 = hgtk.text.compose(sen1), hgtk.text.compose(sen2)
+        if char:
+            sen1, sen2 = hgtk.text.compose(sen1), hgtk.text.compose(sen2)
        
-        score += edit.distance(sen1, sen2) / len(sen2)
+        dist, length = char_distance(sen1, sen2)
+        total_dist += dist
+        total_length += length
 
         f.write(sen1 + "\t" + sen2)
         f.write("\n")
 
-    return score / len(trg)
+    return total_dist, total_length
 
-def save_text(model, val_loader, recog_config, token_list, save_path = "./result.txt"):
+def save_text(model, val_loader, recog_config, token_list, save_path = "./result.txt", char = True):
     device = torch.device("cpu")
     model.to(device)
     val_loader.device = device
     score = 0
     f = open(save_path, "w")
-    for i in tqdm(range(len(val_loader) // val_loader.batch_size)):
+    total_dist = 0
+    total_length = 0
+
+    total_size = len(val_loader) // val_loader.batch_size
+    if len(val_loader) % val_loader.batch_size != 0:
+        total_size += 1
+    
+    for i in tqdm(range(total_size)):
         val_batch = val_loader.get_batch(rand = False)
-        s = span_text(model, val_batch, recog_config, f, token_list)
-        score += s
-        print(s)
+        dist, length = span_text(model, val_batch, recog_config, f, token_list, char)
+        total_dist += dist
+        total_length += length
+
     f.close()
 
-    return score
+    return total_dist / total_length
 
 
 def val_score(model, val_loader):
@@ -88,3 +109,60 @@ def val_score(model, val_loader):
         val_acc += ret_dict["acc"]
     
     return val_cer / len(val_loader) , val_wer / len(val_loader), val_acc / len(val_loader)
+
+
+
+def eval_text(model, val_loader, recog_config, token_list, save_path = "./result.txt", char = True):
+    device = torch.device("cpu")
+    model.to(device)
+    val_loader.device = device
+    score = 0
+    f = open(save_path, "w")
+
+    total_size = len(val_loader) // val_loader.batch_size
+    if len(val_loader) % val_loader.batch_size != 0:
+        total_size += 1
+    
+    for i in tqdm(range(total_size)):
+        val_batch = val_loader.get_test_batch()
+        batch_path = val_batch["path"]
+
+        ys_hat = model.recognize(val_batch["speech"], val_batch["speech_lengths"], recog_config)
+
+        for ys, p in zip(ys_hat, batch_path):
+            sen1 = ""
+            for c in ys:
+                if (c != -1) and (c != len(token_list) - 1):
+                    sen1 += token_list[c]
+
+            if char:
+                sen1 = hgtk.text.compose(sen1)
+        
+            f.write(p + "\t" + sen1 + "\n")
+
+    f.close()
+
+def find_paths(file_path = "./data/Test_Data"):
+    x = os.listdir(file_path)
+    ret_path = []
+    for file in x:
+        if len(file.split(".")) == 1:
+            paths = os.listdir(file_path + "/" + file)
+            ret_path += [file_path + "/" + file + "/" + path for path in paths]
+        
+    return ret_path
+
+def get_distance(file_path):
+    with open(file_path, "r") as f:
+        x = f.readlines()
+
+    total_dist = 0
+    total_length = 0
+    for line in x:
+        s, t = line[:-1].split("\t")
+        
+        dist, length = char_distance(s, t)
+        total_dist += dist
+        total_length += length
+    
+    return total_dist / total_length

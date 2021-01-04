@@ -1,0 +1,30 @@
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0010.pcm	한국 대회에 자유명한 모임을 하시는 분위권이 가니까
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0005.pcm	최근에 출시된 폭스바겐 차 이름이 좋아요
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0008.pcm	내가 가 본 리조트 중에 최악을 다 걸쳤어요
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0007.pcm	모든 것을 할 수 없으니까 슬플라고 해진 것 같아
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0009.pcm	나도 가끔 한 번씩 가지고 그러고 한 장씩 해요
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0001.pcm	기상 문구터 계열 소스는 캐주얼한 것이 다고 싶어
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0006.pcm	인스타그램 중심 시간에 없지
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0003.pcm	내 방 이름진 체육시간이라 거세요
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0002.pcm	나는 카시트를 받아서 그런지 한꺼 같아
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0004.pcm	자주 자주 해 주 본 적 있으니 칼국가스가 제일 먼저 시작해요
+./data/Test_Data/Sample_3/SNR001M3GS001003.pcm	나 움직여 선수 선수하는 사람이 어때요
+./data/Test_Data/Sample_3/SNR001M3GS001001.pcm	유럽 국가 중요한 게 아니야
+./data/Test_Data/Sample_3/SNR001M3GS001008.pcm	최근에 파나소닉에서 출시한 제품이 필요해요
+./data/Test_Data/Sample_3/SNR001M3GS001010.pcm	무슨 결과가 하나
+./data/Test_Data/Sample_3/SNR001M3GS001006.pcm	나 조금 믿음이 좋아하실까
+./data/Test_Data/Sample_3/SNR001M3GS001005.pcm	콘서트롤 타본 적이 있나
+./data/Test_Data/Sample_3/SNR001M3GS001009.pcm	작년 한국에서 토요타 판매량이 좋아
+./data/Test_Data/Sample_3/SNR001M3GS001007.pcm	아직 내 컴퓨터로는 휴가를 보내주세요
+./data/Test_Data/Sample_3/SNR001M3GS001004.pcm	내일 부모님한테 찍어내 주브 선물 드리아 엄청 기대세요
+./data/Test_Data/Sample_3/SNR001M3GS001002.pcm	서브웨이 샌드위치는 골라보세요
+./data/Test_Data/Sample_2/G0195_F4_OFC_009.pcm	오징어
+./data/Test_Data/Sample_2/G0195_F4_OFC_006.pcm	소라
+./data/Test_Data/Sample_2/G0195_F4_OFC_008.pcm	세우
+./data/Test_Data/Sample_2/G0195_F4_OFC_007.pcm	무릎이
+./data/Test_Data/Sample_2/G0195_F4_OFC_005.pcm	수업이웃해
+./data/Test_Data/Sample_2/G0195_F4_OFC_010.pcm	데뷔
+./data/Test_Data/Sample_2/G0195_F4_OFC_003.pcm	우리 이바일
+./data/Test_Data/Sample_2/G0195_F4_OFC_004.pcm	우리 엄청 부랑
+./data/Test_Data/Sample_2/G0195_F4_OFC_002.pcm	수두랑
+./data/Test_Data/Sample_2/G0195_F4_OFC_001.pcm	소형 유산으로 나온 옷 찾자

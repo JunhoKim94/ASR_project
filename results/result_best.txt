@@ -1,32 +1,30 @@
-<sos>그리고 책상에 포스트잇<sos>	그리고 책상에 빼곡하게 붙어 있는 포스트잇들은 데이터로 만들어서 저장해
-<sos>음 좀<sos>	음식 사진에서 생생한 근접샷은 필수거든
-<sos>반려식물은 공기 정화 효과도 주지만 ,습기를 빨아들이는 효과도 있거든<sos>	반려식물은 공기 정화 효과도 주지만 ,습기를 빨아들이는 효과도 있거든
-<sos>채지로<sos>	찬물을 묻혀서 식초나 중성 세제로 씻어주면 돼
-<sos>그리고 잠<sos>	그리고 잠들기 두 시간 전부터는 금식이야
-<sos>버<sos>	버린다고
-<sos>그럼<sos>	그럼, 스프를 먼저 넣을게
-<sos>뭐<sos>	왜 그럴까
-<sos>그렇다고<sos>	그렇다고 부모님 용돈을 안 드릴 수도 없고 고민이에요
-<sos>누가, 왜, 무엇을 나에게 물어볼 지 경우의 수줄 미리 적어놓는 거지<sos>	누가, 왜, 무엇을 나에게 물어볼 지 경우의 수를 미리 적어놓는 거지
-<sos>어떻이죠<sos>	여보세요 어디시죠
-<sos>당장 거실<sos>	당장 거실에 있는 쇼파도 가죽이고, 자동차의 시트도 가죽이잖아
-<sos>썬크림<sos>	썬크림을 이용하면 가죽에 광택도 낼 수 있어
-<sos>살 물<sos>	살 물건들은 적어 왔어
-<sos>당연히<sos>	당연히 여러 개를 사면 할인해 주겠지
-<sos>아침 시간엔 전날의 부부싸움, 출근길 교통 상황 때문에 부장의 심기가 상했는 경우가 많아<sos>	아침 시간엔 전날의 부부싸움, 출근길 교통 상황 때문에 부장의 심기가 상했는 경우가 많아
-<sos>그러니까 아는 게 힘이라는 말이 생긴 거 아니냐<sos>	그러니까 아는 게 힘이라는 말이 생긴 거 아니냐
-<sos>그럼, 꼬들한 면이 좋으면 스프 먼저, 푹 익은 라면이 좋으면 면을 먼저 넣으면 돼<sos>	그럼, 꼬들한 면이 좋으면 스프 먼저, 푹 익은 라면이 좋으면 면을 먼저 넣으면 돼
-<sos>뭔<sos>	뭔데
-<sos>그래서 아침밥은 일찍 출근하기로 했어요<sos>	그래서 아침밥은 포기하고 삼십 분 일찍 출근하기로 했어요
-<sos>에이<sos>	에이 그런 게 어딨어
-<sos>그런 부<sos>	그런 방법이 있어
-<sos>혼자 하면<sos>	혼자 하기 어색하면 친구랑 같이 해도 좋겠다
-<sos>난 요가하면<sos>	난 요가는 별루인데, 다른 건 없어
-<sos>어우, 참<sos>	어우~ 요 며칠 날씨 참 좋다
-<sos>그 다음<sos>	그 다음이 씨 캐롯이야
-<sos>코로나도 그렇고 어르신들은 건강이 제일 걱정이잖아<sos>	코로나도 그렇고 어르신들은 건강이 제일 걱정이잖아
-<sos>그 말엔<sos>	그 말엔 나도 완전 공감
-<sos>날씨가<sos>	날씨가 쌀쌀해져서 그런가
-<sos>하나 뜨면 엄만<sos>	하나 뜨면 줄줄줄 똑같은 것만 만들구
-<sos>오~ 전문<sos>	오~ 전문가 같은데
-<sos>그래도 와<sos>	그래도 오늘 날씨는 참 좋아 다행이다
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0010.pcm	한국 출차보이 모임에 정보히 모임에 가이 다였으니다
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0005.pcm	최근시간이신에요 조식에는 조식은 숙은 많이 셨어요
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0008.pcm	최가 매션을 느깨보는 거예요 눌 출실하고 있어서요
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0007.pcm	무중궈서 셀 하지 너무 뭐 뭐 뭐 뭐 뭐 뭔 가는 살지 있다
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0009.pcm	아지 잘 우인해요 그렇고 보면 나도 마음씨가 자칸가 봐요
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0001.pcm	다 좋은 무습히다이어시저 강월전한 기업 기오시던데요
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0006.pcm	인젠서가 그만큼 실리할 수 없다는데
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0003.pcm	내 어제 제시 집에 유곡시간이 가렸네요
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0002.pcm	면원시언 꼭 카카식을 발에요 바자
+./data/Test_Data/Sample_1/SW201105KTRNGSF03031LJH0004.pcm	잔잭에서 내비리 좋은 해고 칸 줄 힘사가 가세요
+./data/Test_Data/Sample_3/SNR001M3GS001003.pcm	난 안 신전들이 사람들어가 공유하지야
+./data/Test_Data/Sample_3/SNR001M3GS001001.pcm	유머느 디우른 일을 나니는 것 같은 이유가 쓰니까
+./data/Test_Data/Sample_3/SNR001M3GS001008.pcm	주가 자가서 지금 맨셔간에요 주구 현식은 줄었어요
+./data/Test_Data/Sample_3/SNR001M3GS001010.pcm	그럼 그런 구주주를 아지라고 생각하는 거기다
+./data/Test_Data/Sample_3/SNR001M3GS001006.pcm	아니가 조색이 많이 부터 뜨리니다
+./data/Test_Data/Sample_3/SNR001M3GS001005.pcm	나라도 무분은 사람이 많더라고요
+./data/Test_Data/Sample_3/SNR001M3GS001009.pcm	상식이라에 간수홍이 핑구한 구종히 장상구죠
+./data/Test_Data/Sample_3/SNR001M3GS001007.pcm	아직이나 얼두 줄고하나루 대세요
+./data/Test_Data/Sample_3/SNR001M3GS001004.pcm	나는 온사는 데 누리 보면서 시군 전화되구지예요
+./data/Test_Data/Sample_3/SNR001M3GS001002.pcm	수종하지다고 수구 많을 주고 많을 수 있는데
+./data/Test_Data/Sample_2/G0195_F4_OFC_009.pcm	지마 옷지나
+./data/Test_Data/Sample_2/G0195_F4_OFC_006.pcm	소라
+./data/Test_Data/Sample_2/G0195_F4_OFC_008.pcm	세오세요
+./data/Test_Data/Sample_2/G0195_F4_OFC_007.pcm	꼭이 누구
+./data/Test_Data/Sample_2/G0195_F4_OFC_005.pcm	조개 좋으게 좋아
+./data/Test_Data/Sample_2/G0195_F4_OFC_010.pcm	내 내 애 나이대
+./data/Test_Data/Sample_2/G0195_F4_OFC_003.pcm	우리 살 오리 이발
+./data/Test_Data/Sample_2/G0195_F4_OFC_004.pcm	누랑개한 게 아니야
+./data/Test_Data/Sample_2/G0195_F4_OFC_002.pcm	수유이양보
+./data/Test_Data/Sample_2/G0195_F4_OFC_001.pcm	수영 우양 뭐자

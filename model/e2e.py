@@ -14,7 +14,8 @@ from espnet.nets.asr_interface import ASRInterface
 from espnet.nets.ctc_prefix_score import CTCPrefixScore
 from espnet.nets.e2e_asr_common import end_detect
 from espnet.nets.e2e_asr_common import ErrorCalculator
-from espnet.nets.pytorch_backend.ctc import CTC
+#from espnet.nets.pytorch_backend.ctc import CTC
+from model.ctc import CTC
 from espnet.nets.pytorch_backend.e2e_asr import CTC_LOSS_THRESHOLD
 from espnet.nets.pytorch_backend.e2e_asr import Reporter
 from espnet.nets.pytorch_backend.nets_utils import get_subsample
@@ -42,6 +43,8 @@ from espnet.nets.pytorch_backend.transformer.mask import target_mask
 from espnet.nets.pytorch_backend.transformer.plot import PlotAttentionReport
 from espnet.nets.scorers.ctc import CTCPrefixScorer
 from espnet.utils.fill_missing_args import fill_missing_args
+
+import cupy
 
 
 class E2E(ASRInterface, torch.nn.Module):
@@ -318,6 +321,7 @@ class E2E(ASRInterface, torch.nn.Module):
             hyp = {"score": 0.0, "yseq": [y]}
         if lpz is not None:
             ctc_prefix_score = CTCPrefixScore(lpz.detach().cpu().numpy(), 0, self.eos, numpy)
+            #ctc_prefix_score = CTCPrefixScore(lpz.detach().cupy(), 0, self.eos, cupy)
             hyp["ctc_state_prev"] = ctc_prefix_score.initial_state()
             hyp["ctc_score_prev"] = 0.0
             if ctc_weight != 1.0:

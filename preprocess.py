@@ -69,7 +69,8 @@ def preprocess_data(char = True):
                     delete += 1
                     continue
                 
-                label = hgtk.text.decompose(label)
+                if char:
+                    label = hgtk.text.decompose(label)
 
                 ret_paths.append(real_path)
                 trg.append(label[:-1])

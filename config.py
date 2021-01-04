@@ -2,7 +2,7 @@ class Config:
     def __init__(self, char_list):
         self.transformer_encoder_selfattn_layer_type = "selfattn"
         self.adim = 512
-        self.aheads = 4
+        self.aheads = 8
         self.wshare = 4
         self.ldconv_encoder_kernel_length = 11
         self.ldconv_usebias = False
@@ -15,7 +15,7 @@ class Config:
         self.dunits = 2048
         self.dlayers = 6
         self.lsm_weight = 0.0
-        self.transformer_length_normalized_loss = False
+        self.transformer_length_normalized_loss = True
         self.transformer_decoder_selfattn_layer_type = "selfattn"
         self.ctc_type = "builtin"
         self.char_list = char_list
@@ -30,7 +30,7 @@ class Config:
 class Recog_config:
     def __init__(self):
         self.ctc_weight = 0
-        self.beam_size = 1
+        self.beam_size = 3
         self.penalty = 1.3
         self.maxlenratio = 0.8
         self.minlenratio = 0

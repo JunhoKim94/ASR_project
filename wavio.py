@@ -74,3 +74,16 @@ def writewav24(filename, rate, data):
     w.setframerate(rate)
     w.writeframes(wavdata)
     w.close()
+
+if __name__ == "__main__":
+    import os
+    file_path = "./data/Test_Data"
+    x = os.listdir(file_path)
+    print(x)
+    ret_path = []
+    for file in x:
+        if len(file.split(".")) == 1:
+            paths = os.listdir(file_path + "/" + file)
+            ret_path += [file_path + "/" + file + "/" + path for path in paths]
+        
+    print(ret_path)

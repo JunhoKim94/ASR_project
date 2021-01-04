@@ -105,6 +105,32 @@ class Batch_Loader:
 
         return ret_dict
 
+    def get_test_batch(self):
+        seed = self.get_seed(False)
+        
+        batch_paths = [self.path[i] for i in seed]
+
+        data = get_channel_from_pcm(batch_paths)
+        batch_size = len(data)
+        channel = data[0].shape[1]
+
+        seq_length = torch.LongTensor([len(b) for b in data])
+        max_length = max(seq_length)
+
+        torch_batch = torch.zeros(batch_size, max_length, channel).fill_(-1)
+
+        for idx, seq in enumerate(data):
+            torch_batch[idx, :seq_length[idx], :] = seq
+
+        ret_dict = {"speech" : torch_batch.to(self.device), 
+                    "speech_lengths" : seq_length.to(self.device),
+                    "path" : batch_paths
+                    }
+
+        if (self.idx * self.batch_size) >= len(self.path):
+            self.idx = 0
+
+        return ret_dict
     
     def padding(self, paths, trg):
         '''

@@ -12,6 +12,8 @@ import os
 import pickle
 from utils import *
 from torch.utils.tensorboard import SummaryWriter
+import logging
+logging.basicConfig(level=logging.ERROR)
 
 
 writer = SummaryWriter(comment = "ASR-Transformers")
@@ -22,12 +24,14 @@ input_size = 80
 #Hyper parameters
 epochs = 80
 batch_size = 8
-lr = 0.0025
+lr = 0.025
 warm_up = 8000
+char = False
 
 SAMPLE_RATE = 16000
 
-path, trg, char2idx = preprocess_data()
+path, trg, char2idx = preprocess_data(char = char)
+
 ret = split_path(path, trg, 0.025, save = True)
 
 train_path = ret["train_path"]
@@ -91,7 +95,7 @@ for epoch in range(epochs):
         acc = ret_dict["acc"]
 
         writer.add_scalar("loss/train", loss.item(), step)
-        writer.add_scalar("acc/train", acc)
+        writer.add_scalar("acc/train", acc, step)
 
         epoch_loss += loss.item()
         epoch_acc += acc
@@ -113,6 +117,6 @@ for epoch in range(epochs):
         print(f"epoch : {epoch} | epoch loss : {epoch_loss} | acc : {epoch_acc} | val acc : {val_acc} | cer : {cer} | wer: {wer} | time : {current_time}")
         if best_acc < val_acc:
             best_acc = val_acc
-            save_text(model, test_loader, recog_config, token_list, save_path = "./results/result_ctc.txt")
-            torch.save(model.state_dict(), "./save_model/best_a8.pt")
+            save_text(model, test_loader, recog_config, token_list, save_path = "./results/result_ctc.txt", char = char)
+            torch.save(model.state_dict(), "./save_model/best_ctc.pt")
 
