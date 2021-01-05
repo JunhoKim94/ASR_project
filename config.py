@@ -23,15 +23,15 @@ class Config:
         self.sym_blank = "-"
         self.report_cer = True
         self.report_wer = True
-        self.mtlalpha = 0
+        self.mtlalpha = 0.3
         self.transformer_init = "pytorch"
         self.ignore_id = -1
 
 class Recog_config:
     def __init__(self):
-        self.ctc_weight = 0
+        self.ctc_weight = 0.3
         self.beam_size = 3
-        self.penalty = 1.3
+        self.penalty = 1.2
         self.maxlenratio = 0.8
         self.minlenratio = 0
         self.lm_weight = 0

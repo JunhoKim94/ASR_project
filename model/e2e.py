@@ -70,7 +70,7 @@ class E2E(ASRInterface, torch.nn.Module):
         """Return PlotAttentionReport."""
         return PlotAttentionReport
 
-    def __init__(self, idim, odim, args, ignore_id=-1):
+    def __init__(self, idim, odim, args, device, ignore_id=-1):
         """Construct an E2E object.
 
         :param int idim: dimension of inputs
@@ -153,6 +153,8 @@ class E2E(ASRInterface, torch.nn.Module):
         else:
             self.error_calculator = None
         self.rnnlm = None
+        self.device = device
+
 
     def reset_parameters(self, args):
         """Initialize parameters."""
@@ -354,7 +356,7 @@ class E2E(ASRInterface, torch.nn.Module):
                     local_att_scores = traced_decoder(ys, ys_mask, enc_output)[0]
                 else:
                     local_att_scores = self.decoder.forward_one_step(
-                        ys, ys_mask, enc_output
+                        ys.to(self.device), ys_mask.to(self.device), enc_output.to(self.device)
                     )[0]
 
                 if rnnlm:
@@ -370,11 +372,11 @@ class E2E(ASRInterface, torch.nn.Module):
                         local_att_scores, ctc_beam, dim=1
                     )
                     ctc_scores, ctc_states = ctc_prefix_score(
-                        hyp["yseq"], local_best_ids[0], hyp["ctc_state_prev"]
+                        hyp["yseq"], local_best_ids[0].detach().cpu().numpy(), hyp["ctc_state_prev"]
                     )
                     local_scores = (1.0 - ctc_weight) * local_att_scores[
                         :, local_best_ids[0]
-                    ] + ctc_weight * torch.from_numpy(
+                    ].cpu() + ctc_weight * torch.from_numpy(
                         ctc_scores - hyp["ctc_score_prev"]
                     )
                     if rnnlm:

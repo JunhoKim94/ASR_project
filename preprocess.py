@@ -80,7 +80,6 @@ def preprocess_data(char = True):
                         continue
                     char2idx[c] = len(char2idx)
 
-    print(char2idx)
     ret_trg = []
     for sen in trg:
         ret_trg.append([char2idx[c] for c in sen])
@@ -90,9 +89,6 @@ def preprocess_data(char = True):
 
     with open("./char2idx.pickle", "wb") as f:
         pickle.dump(char2idx, f)
-
-    split_path(ret_paths, ret_trg, ratio = 0.05)
-
 
     return ret_paths, ret_trg, char2idx
 

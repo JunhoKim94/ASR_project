@@ -62,7 +62,8 @@ recog_config = Recog_config()
 model = ASRModel(input_size = input_size,
                 vocab_size = vocab_size,
                 token_list = token_list,
-                config = config)
+                config = config,
+                device = device)
 
 
 #model.to(device)

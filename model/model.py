@@ -37,6 +37,7 @@ class ASRModel(torch.nn.Module):
         input_size: int,
         vocab_size: int,
         token_list: Union[Tuple[str, ...], List[str]],
+        device,
         config
     ):
         super().__init__()
@@ -59,7 +60,7 @@ class ASRModel(torch.nn.Module):
                             n_mels = 80)
 
 
-        self.model = E2E(input_size, vocab_size, config)
+        self.model = E2E(input_size, vocab_size, config, device)
 
 
     def _extract_feats(

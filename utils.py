@@ -5,6 +5,7 @@ from tqdm import tqdm
 import hgtk
 import nltk
 import Levenshtein as Lev 
+import os
 
 def char_distance(ref, hyp):
     ref = ref.replace(' ', '') 
@@ -24,10 +25,10 @@ def split_path(path, trg, ratio = 0.1, save = False):
 
         seed = random.random()
 
-        if seed < 0.001:
+        if seed < 0.005:
             test_path.append(path[idx])
             test_trg.append(trg[idx])
-        elif 0.001 < seed < ratio + 0.001:
+        elif 0.005 < seed < ratio + 0.005:
             val_path.append(path[idx])
             val_trg.append(trg[idx])
         else:
@@ -50,7 +51,6 @@ def span_text(model, train_batch, recog_config, f, token_list, char):
     for ys, tr in zip(ys_hat, trg):
         sen1, sen2 = "", ""
         for c in ys:
-            #print(token_list[c], token_list[t])
             if (c != -1) and (c != len(token_list) - 1):
                 sen1 += token_list[c]
         for t in tr:
@@ -70,9 +70,6 @@ def span_text(model, train_batch, recog_config, f, token_list, char):
     return total_dist, total_length
 
 def save_text(model, val_loader, recog_config, token_list, save_path = "./result.txt", char = True):
-    device = torch.device("cpu")
-    model.to(device)
-    val_loader.device = device
     score = 0
     f = open(save_path, "w")
     total_dist = 0
@@ -113,9 +110,6 @@ def val_score(model, val_loader):
 
 
 def eval_text(model, val_loader, recog_config, token_list, save_path = "./result.txt", char = True):
-    device = torch.device("cpu")
-    model.to(device)
-    val_loader.device = device
     score = 0
     f = open(save_path, "w")
 
