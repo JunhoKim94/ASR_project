@@ -44,9 +44,6 @@ from espnet.nets.pytorch_backend.transformer.plot import PlotAttentionReport
 from espnet.nets.scorers.ctc import CTCPrefixScorer
 from espnet.utils.fill_missing_args import fill_missing_args
 
-import cupy
-
-
 class E2E(ASRInterface, torch.nn.Module):
     """E2E module.
 

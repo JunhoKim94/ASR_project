@@ -11,6 +11,9 @@ from tqdm import tqdm
 import os
 import pickle
 from utils import *
+import logging
+logging.basicConfig(level=logging.ERROR)
+
 
 device = torch.device("cuda:3")
 #device = torch.device("cpu")
@@ -21,18 +24,19 @@ batch_size = 8
 SAMPLE_RATE = 16000
 char = True
 
-#with open("./split_data.pickle", "rb") as f:
-#    a = pickle.load(f)
+with open("./split_data.pickle", "rb") as f:
+    a = pickle.load(f)
 
 with open("./save_model/char2idx.pickle", "rb") as f:
     char2idx = pickle.load(f)
 
 print(char2idx)
-#test_path = a["test_path"]
-#test_trg = a["test_trg"]
-test_path = find_paths("./data/Test_Data")
+test_path = a["test_path"]
+test_trg = a["test_trg"]
+#test_path = find_paths("./data/Test_Data")
+#test_trg = None
 
-test_loader = Batch_Loader(batch_size, device, test_path, 0, char2idx)
+test_loader = Batch_Loader(batch_size, device, test_path, test_trg, char2idx)
 
 token_list = []
 for key, value in char2idx.items():
@@ -52,5 +56,9 @@ model = ASRModel(input_size = input_size,
 model.to(device)
 model.load_state_dict(torch.load("./save_model/best_ctc.pt", map_location = device))
 
-eval_text(model, test_loader, recog_config, token_list, save_path = "./results/result_ctc_test.txt", char = char)
 
+if test_trg == None:
+    eval_text(model, test_loader, recog_config, token_list, save_path = "./results/result_ctc_test.txt", char = char)
+else:
+    score = save_text(model, test_loader, recog_config, token_list, save_path = "./results/result_ctc_test.txt", char = char)
+    print(score)

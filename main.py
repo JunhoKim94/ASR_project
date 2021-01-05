@@ -24,9 +24,9 @@ input_size = 80
 #Hyper parameters
 epochs = 80
 batch_size = 8
-lr = 0.025
+lr = 0.0025
 warm_up = 8000
-char = False
+char = True
 
 SAMPLE_RATE = 16000
 
