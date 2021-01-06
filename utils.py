@@ -6,13 +6,15 @@ import hgtk
 import nltk
 import Levenshtein as Lev 
 import os
+from hanspell import spell_checker
 
-def char_distance(ref, hyp):
+def char_distance(hyp, ref):
     ref = ref.replace(' ', '') 
     hyp = hyp.replace(' ', '') 
 
     dist = Lev.distance(hyp, ref)
     length = len(ref.replace(' ', ''))
+    #length = len(ref)
 
     return dist, length 
 
@@ -60,6 +62,10 @@ def span_text(model, train_batch, recog_config, f, token_list, char):
         if char:
             sen1, sen2 = hgtk.text.compose(sen1), hgtk.text.compose(sen2)
        
+        #result = spell_checker.check(sen1)
+        #result = result.as_dict()
+        #f.write(sen1 + "\t")
+        #sen1 = result["checked"]
         dist, length = char_distance(sen1, sen2)
         total_dist += dist
         total_length += length

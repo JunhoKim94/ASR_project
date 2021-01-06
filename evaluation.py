@@ -24,7 +24,7 @@ batch_size = 8
 SAMPLE_RATE = 16000
 char = True
 
-with open("./split_data.pickle", "rb") as f:
+with open("./save_model/split_data.pickle", "rb") as f:
     a = pickle.load(f)
 
 with open("./save_model/char2idx.pickle", "rb") as f:
@@ -61,4 +61,4 @@ if test_trg == None:
     eval_text(model, test_loader, recog_config, token_list, save_path = "./results/result_ctc_test.txt", char = char)
 else:
     score = save_text(model, test_loader, recog_config, token_list, save_path = "./results/result_ctc_test.txt", char = char)
-    print(score)
+    print((1 - score) * 100)
