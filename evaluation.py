@@ -1,11 +1,8 @@
-from model.frontend import CustomFrontend
 from model.model import ASRModel
 from loader import *
 import torch
-from preprocess import *
 import time
 import argparse
-from espnet.bin.asr_train import get_parser
 from config import *
 from tqdm import tqdm
 import os
@@ -14,14 +11,19 @@ from utils import *
 import logging
 logging.basicConfig(level=logging.ERROR)
 
+parser = argparse.ArgumentParser()
 
-device = torch.device("cuda:3")
-#device = torch.device("cpu")
+parser.add_argument("--input_dir", type = str, help = "Test할 파일이 있는 폴더 경로를 입력하세요")
+parser.add_argument("--output_dir", type = str, help = "출력 파일 경로를 입력하세요")
+args = parser.parse_args()
+
+print(f"Your test folder is {args.input_dir}")
+print(f"Your output file is {args.output_dir}")
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 input_size = 80
 #Hyper parameters
-epochs = 80
 batch_size = 8
-SAMPLE_RATE = 16000
 char = True
 
 with open("./save_model/split_data.pickle", "rb") as f:
@@ -33,7 +35,7 @@ with open("./save_model/char2idx.pickle", "rb") as f:
 print(char2idx)
 test_path = a["test_path"]
 test_trg = a["test_trg"]
-#test_path = find_paths("./data/Test_Data")
+#test_path = find_paths(args.input_dir)
 #test_trg = None
 
 test_loader = Batch_Loader(batch_size, device, test_path, test_trg, char2idx)
@@ -53,12 +55,12 @@ model = ASRModel(input_size = input_size,
                 token_list = token_list,
                 config = config,
                 device = device)
-model.to(device)
-model.load_state_dict(torch.load("./save_model/best_ctc.pt", map_location = device))
 
+model.to(device)
+model.load_state_dict(torch.load("./save_model/best_ctc_0.4.pt", map_location = device))
 
 if test_trg == None:
-    eval_text(model, test_loader, recog_config, token_list, save_path = "./results/result_ctc_test.txt", char = char)
+    eval_text(model, test_loader, recog_config, token_list, save_path = args.output_dir, char = char)
 else:
-    score = save_text(model, test_loader, recog_config, token_list, save_path = "./results/result_ctc_test.txt", char = char)
+    score = save_text(model, test_loader, recog_config, token_list, save_path = "./results/result_ctc_eval.txt", char = char)
     print((1 - score) * 100)
