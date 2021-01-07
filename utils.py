@@ -148,7 +148,9 @@ def find_paths(file_path = "./data/Test_Data"):
     for file in x:
         if len(file.split(".")) == 1:
             paths = os.listdir(file_path + "/" + file)
-            ret_path += [file_path + "/" + file + "/" + path for path in paths]
+            for path in paths:
+                if path.split(".")[-1].lower() == "pcm":
+                    ret_path += [file_path + "/" + file + "/" + path]
         
     return ret_path
 
