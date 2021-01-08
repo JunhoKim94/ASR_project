@@ -57,7 +57,7 @@ model = ASRModel(input_size = input_size,
                 device = device)
 
 model.to(device)
-model.load_state_dict(torch.load("./save_model/best_ctc.pt", map_location = device))
+model.load_state_dict(torch.load("./save_model/best_ctc_0.4.pt", map_location = device))
 
 if test_trg == None:
     eval_text(model, test_loader, recog_config, token_list, save_path = args.output_dir, char = char)
