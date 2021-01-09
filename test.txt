@@ -1,20 +1,300 @@
-./data/Test//Sample4/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01347.PCM	주유 손잡이를 세게 잡고 기름을 넣으면 거품이 생겨서 많은 기름을 넣을 수 없대
-./data/Test//Sample4/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01346.PCM	정말 그건 금시초문인데
-./data/Test//Sample4/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01345.PCM	셀프 주유할 때 주유 방법에 따라 기름 들어가는 양이 달라진다는 거 알았어
-./data/Test//Sample1/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01357.PCM	자면서 다이어트
-./data/Test//Sample1/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01358.PCM	꿈에서 운동하는 건가
-./data/Test//Sample1/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01355.PCM	왜 굶어서 기운이 없어서 일찍 자는 거야
-./data/Test//Sample1/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01359.PCM	말 걸지 마
-./data/Test//Sample1/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01354.PCM	나 오늘부터 다이어트야
-./data/Test//Sample1/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01360.PCM	잘 시간 놓치면 잠이 안 온단 말이야
-./data/Test//Sample1/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01356.PCM	아니, 자면서 다이어트 하려고
-./data/Test//Sample3/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01336.PCM	리터로 넣으라고 하려고 그러지
-./data/Test//Sample3/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01331.PCM	여기저기서 십시일반하면 꽤 큰 돈이 된다구
-./data/Test//Sample3/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01334.PCM	이번에는 꼭 지킬테니
-./data/Test//Sample3/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01332.PCM	알았어
-./data/Test//Sample3/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01335.PCM	주유할 때 금액으로 넣어 리터로 넣어
-./data/Test//Sample3/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01333.PCM	뜸 들이지 말고 말해 봐
-./data/Test//Sample2/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01344.PCM	아니, 그건 아니고
-./data/Test//Sample2/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01348.PCM	잔에 맥주를 따르듯이 살살 따라주면 조금이라도 더 주유할 수 있대
-./data/Test//Sample2/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01343.PCM	폼내다 굶어죽고 싶으세요
-./data/Test//Sample2/성인남녀_001_A_001_M_KHI00_24_수도권_녹음실_01342.PCM	가득이요 하는 게 폼 나는데
+./data/AIhub_300//Sample4/KsponSpeech_000234.pcm	저기는 기분이고 그거 심각해야 하는 거지
+./data/AIhub_300//Sample4/KsponSpeech_000226.pcm	오켄텐데 그러면 주로 마음에 유놀이라
+./data/AIhub_300//Sample4/KsponSpeech_000295.pcm	저기 전에 젖소까지는 장가지도 않았었지 않는다
+./data/AIhub_300//Sample4/KsponSpeech_000284.pcm	저기 전에 도전했으면 좋겠어
+./data/AIhub_300//Sample4/KsponSpeech_000229.pcm	어제 우리 애기 면역을 오래도 계단을 내려가는데 이건 배에 검을 기다리가 아니고 그런데 있어오는 거 아니잖더라
+./data/AIhub_300//Sample4/KsponSpeech_000270.pcm	진짜 우리나라 제장도 안 지니었었는데 진짜 아닐이었어지
+./data/AIhub_300//Sample4/KsponSpeech_000272.pcm	저는 오십 분 전 있어야 되잖아
+./data/AIhub_300//Sample4/KsponSpeech_000242.pcm	모기는 새로 어후 알아서 나놀러 할 때 할까 나누가 아 주 어딘 것 같다 한 대려단 식사라고 하니까 나 그러더라
+./data/AIhub_300//Sample4/KsponSpeech_000254.pcm	진 다 어디서 일찍 자리지
+./data/AIhub_300//Sample4/KsponSpeech_000271.pcm	저기 전에 젖을 거잖아
+./data/AIhub_300//Sample4/KsponSpeech_000253.pcm	진짜 우리나라 진짜 아니었었어 어땠어요
+./data/AIhub_300//Sample4/KsponSpeech_000248.pcm	토요일 나지 살 단들 거 같다고 누가 어니 수업 삼억 안에 오래 거나 신간다고 순해 간다고 폭랍 만들었는다고
+./data/AIhub_300//Sample4/KsponSpeech_000257.pcm	그런 구찌 해 웨이 거울 거 같은데
+./data/AIhub_300//Sample4/KsponSpeech_000238.pcm	목 노력 다지 않는 바이 딸식으로 얘기해서 아케 몰 때마다 송화 너무 일만 가더라
+./data/AIhub_300//Sample4/KsponSpeech_000293.pcm	저기 전에 진짜 작아졌는데 진짜 작당잖아졌어지잖아졌어지지
+./data/AIhub_300//Sample4/KsponSpeech_000235.pcm	너 보안 기관절인 난 간계를 넣어 아니봐서 간 개를 넣어 아니봐서
+./data/AIhub_300//Sample4/KsponSpeech_000261.pcm	진짜 우리나라 진짜 아니었어
+./data/AIhub_300//Sample4/KsponSpeech_000265.pcm	오스라을 사람은 싫어하겠는데 즉명을 굉장히 많이 하더라고 먹은 제 들면으래 그래서 가르쳐 주는 거는
+./data/AIhub_300//Sample4/KsponSpeech_000246.pcm	닭도 하야고 남동생을 나온 거 좋아해서 그냥 돈은
+./data/AIhub_300//Sample4/KsponSpeech_000292.pcm	진짜 울리나라 진짜 올렌지도 찍장 장난지야
+./data/AIhub_300//Sample4/KsponSpeech_000249.pcm	굿네이는 거는 학교에 이거지 학교를 저로 파면 좋을 시에 다 가는 거지
+./data/AIhub_300//Sample4/KsponSpeech_000277.pcm	내가 옷바는 어디서 내가 있었는지
+./data/AIhub_300//Sample4/KsponSpeech_000281.pcm	거워 하는데 그렇게 오른지가 난굴리는데 크고를 먹힌 저 돈드 마실 줄 거 봤고, 하기가
+./data/AIhub_300//Sample4/KsponSpeech_000296.pcm	겉보다오 그 다음 여행이 우리 저분에 갔다 온 여행이잖아
+./data/AIhub_300//Sample4/KsponSpeech_000267.pcm	너가 가게 담당이나 제주도 알겠어
+./data/AIhub_300//Sample4/KsponSpeech_000289.pcm	농무약은 내 나 크고 고싶어 필라테스 온 자란 알았어
+./data/AIhub_300//Sample4/KsponSpeech_000279.pcm	우리 언니고 돈 주고 아는 건데 친처가 왕가 갔다고 단복북에만 걔들이 들더라
+./data/AIhub_300//Sample4/KsponSpeech_000251.pcm	혹시 모습겠어 내 오는 스쿼시 내겐 도입브이 생각했기에 웬이
+./data/AIhub_300//Sample4/KsponSpeech_000230.pcm	내가 가야 미연한 가 바지결은 건 거에 대가 그 옆에 찍어 있잖아 나 그 지원에 걸랍게 같이 그 어도 가
+./data/AIhub_300//Sample4/KsponSpeech_000239.pcm	심지어 그거 시장 서울에 있는 거 아니고 니도 있는 건데 지다 이게 강갔었거든
+./data/AIhub_300//Sample4/KsponSpeech_000260.pcm	바다에서 제일 좋아하는 거지 않겠다
+./data/AIhub_300//Sample4/KsponSpeech_000241.pcm	지금 어디는 집이 있는데 저기 앉았더니 그랬어
+./data/AIhub_300//Sample4/KsponSpeech_000274.pcm	제습가 있지 않아도 돼지도 않았어
+./data/AIhub_300//Sample4/KsponSpeech_000256.pcm	갈생후는 건데가 술래기 하다가 말하잖아 근데 애들이 막 쏠쓰다고 해 가지고 무슨 같은 같은 거
+./data/AIhub_300//Sample4/KsponSpeech_000232.pcm	어려도 이번 볶에 먹어다갔다가 먹어두가 그런 건 무슨도금 미사번지 많게 만나
+./data/AIhub_300//Sample4/KsponSpeech_000236.pcm	제주도에 아니라고 하지 않아
+./data/AIhub_300//Sample4/KsponSpeech_000291.pcm	거기서 너무 먹을 걸 많이서 우리 반한 긴 거 알지
+./data/AIhub_300//Sample4/KsponSpeech_000287.pcm	만두 건 하루도 마크 그롭가 면을 죽게 수열날 박수이 안 됐지
+./data/AIhub_300//Sample4/KsponSpeech_000298.pcm	아니 그때 말했던 거 다야 그게
+./data/AIhub_300//Sample4/KsponSpeech_000300.pcm	캐핑의 태러가 라는 길 같아 어움이야
+./data/AIhub_300//Sample4/KsponSpeech_000285.pcm	농사에 안 하여 쫌 하나에 뭐 하나 고추나 고르런 심오어서 여색을 지방해서 그냥 난 게 동안을 좋아하더라고 내요 가지
+./data/AIhub_300//Sample4/KsponSpeech_000297.pcm	저기 전에 저기 앉아서 가지고 다녀왔었잖아
+./data/AIhub_300//Sample4/KsponSpeech_000269.pcm	근데 너는 아빠가 유생일이랑 나왔었잖아
+./data/AIhub_300//Sample4/KsponSpeech_000275.pcm	어 나는 동생 형아 오그랜드 한 사람들끼리 대셔주라고 할 거야
+./data/AIhub_300//Sample4/KsponSpeech_000259.pcm	재밌는 인상이다 있는 거 아니잖아
+./data/AIhub_300//Sample4/KsponSpeech_000237.pcm	저는 한 번에 설정하는 거 없어졌지
+./data/AIhub_300//Sample4/KsponSpeech_000294.pcm	저기 전에 진짜 작아졌는데 장난장이잖아졌어지잖아졌어지지
+./data/AIhub_300//Sample4/KsponSpeech_000282.pcm	저기 우리나라에서 어디서 난 거지
+./data/AIhub_300//Sample4/KsponSpeech_000273.pcm	저기 앉아서 가지고 그랬어
+./data/AIhub_300//Sample4/KsponSpeech_000266.pcm	저기 앉아서 너는 아직도 안 지나가지
+./data/AIhub_300//Sample4/KsponSpeech_000240.pcm	어 너 너한테 프로또 한 면에 대상한 수적이에 난 크리에 앉아서 생각하는 게 나타고 말든 게 없다
+./data/AIhub_300//Sample4/KsponSpeech_000299.pcm	진짜 아니야 진짜 아니잖아
+./data/AIhub_300//Sample4/KsponSpeech_000290.pcm	진짜 우리나라 진짜 우리 아니라도 잔다주잖아
+./data/AIhub_300//Sample4/KsponSpeech_000244.pcm	지금 어쩌도 아니었는지 알려줘야 하는지
+./data/AIhub_300//Sample4/KsponSpeech_000245.pcm	근성 분천가 우승 정도 가능학 가
+./data/AIhub_300//Sample4/KsponSpeech_000262.pcm	우리집 다이없잖아 근지금 그러다고 이 거지 뿌드로 고기만 먹다 보니까 이제 슬피로가 없어 가지고 사랍니까 이제 이상하게 다 이척하는 거든
+./data/AIhub_300//Sample4/KsponSpeech_000264.pcm	어떻게 해가 좀 있는지
+./data/AIhub_300//Sample4/KsponSpeech_000233.pcm	어른이 다 맞아야 된다는 거 아니야
+./data/AIhub_300//Sample4/KsponSpeech_000227.pcm	우리나라 아프랑 아파서 맛있는데 들려
+./data/AIhub_300//Sample4/KsponSpeech_000283.pcm	힐러가 왜가 먼 데 오거에 갈려면 돈으로 비지했어
+./data/AIhub_300//Sample4/KsponSpeech_000255.pcm	저기 전에 진짜 작아졌는데 진짜 아니었어지
+./data/AIhub_300//Sample4/KsponSpeech_000276.pcm	저기 전에 젖소까지는 장가잖아
+./data/AIhub_300//Sample4/KsponSpeech_000288.pcm	나는 공감을 할 수 없으면 무가운 책 가방이랬어
+./data/AIhub_300//Sample4/KsponSpeech_000258.pcm	그는 소개팅을 한대
+./data/AIhub_300//Sample4/KsponSpeech_000278.pcm	그 당시에도 어디우들여다 그 이베라와 프리어보하고 내 청감에 그때 되긴 좋지 그때 이래 다아침에 신청했더니
+./data/AIhub_300//Sample4/KsponSpeech_000228.pcm	애가 애들하고 할머니가 밖에 없으니까 우리다
+./data/AIhub_300//Sample4/KsponSpeech_000250.pcm	소월 안 들어 주도라도 뭐 머멀대로 우리가 좋아하고 없어졌어
+./data/AIhub_300//Sample4/KsponSpeech_000247.pcm	나 이 뽑아 비행겼어
+./data/AIhub_300//Sample4/KsponSpeech_000280.pcm	메달을 하게 되는 거야 그런데 상대방에 말을 알아 특히 위에서라도 내가 오늘을 해야 되잖아요 그런 거 아나 같아요
+./data/AIhub_300//Sample4/KsponSpeech_000231.pcm	저기 앉아서 나 지나가 이었어
+./data/AIhub_300//Sample4/KsponSpeech_000263.pcm	저거 쉬는 없는 것이다
+./data/AIhub_300//Sample4/KsponSpeech_000252.pcm	저기 전에 젖소까지 않았는데 진짜 안 오잖아졌어요
+./data/AIhub_300//Sample4/KsponSpeech_000268.pcm	저기 전에 젖소까지는 장난치니까 더 가지가 났었어지
+./data/AIhub_300//Sample4/KsponSpeech_000243.pcm	진짜 우리나라 진짜 움직은 지르지 않는대 진짜 아니잖아
+./data/AIhub_300//Sample4/KsponSpeech_000286.pcm	어 워커큰 거다가 일단 편기 일정 같은 것보면서 어 내 가은 하는 게 하고 싶은 데이라고 갭팀대로 잘 되던데 그렇게 아주 그러 거지다
+./data/AIhub_300//Sample1/KsponSpeech_000069.pcm	내가 아는 눈인기 치과는 가방에 있는데
+./data/AIhub_300//Sample1/KsponSpeech_000070.pcm	근데 너 테거보니까 빵금 크레이크도 해 보는데
+./data/AIhub_300//Sample1/KsponSpeech_000071.pcm	저기 앉아서 너는 진짜 아니었는지 아니잖아졌어지잖아지요
+./data/AIhub_300//Sample1/KsponSpeech_000042.pcm	저기 앉아서 나 있어야 했었는지 아니잖아졌어지잖아졌어지잖않잖아지지
+./data/AIhub_300//Sample1/KsponSpeech_000033.pcm	그럼 좋은 학교 다니니까 그런 거지 않겠다
+./data/AIhub_300//Sample1/KsponSpeech_000028.pcm	저기 공연 인텍스에 있는지
+./data/AIhub_300//Sample1/KsponSpeech_000032.pcm	저기 앉아서 너는 진짜 아니었어
+./data/AIhub_300//Sample1/KsponSpeech_000053.pcm	내가 안으로 가까이를 생각 외했어
+./data/AIhub_300//Sample1/KsponSpeech_000047.pcm	저기 앉아서 너는 진짜 장난감였잖아
+./data/AIhub_300//Sample1/KsponSpeech_000052.pcm	저기 앉아서 너는 장난감이 아니지 않아졌어
+./data/AIhub_300//Sample1/KsponSpeech_000065.pcm	어 해로지 말라 그래 몇 시간 내발 떠오면 진짜 자장할 거야
+./data/AIhub_300//Sample1/KsponSpeech_000011.pcm	한 시에 안에서 아시피 난 농이 주는 게 아니었지
+./data/AIhub_300//Sample1/KsponSpeech_000013.pcm	진 성장에 언제 있지
+./data/AIhub_300//Sample1/KsponSpeech_000024.pcm	노오시아 오 시에 뻐스도 쓰고 천만 원인 거 그럴거
+./data/AIhub_300//Sample1/KsponSpeech_000005.pcm	그게 영자일 프로 가정이 아이들과 가정이 무슨이야
+./data/AIhub_300//Sample1/KsponSpeech_000045.pcm	진짜 우리나라 진짜 아니었었는지 아니었어 자잖아
+./data/AIhub_300//Sample1/KsponSpeech_000003.pcm	그래서 지워랑 계단 올라와서 막 위에 노하는 기구입드여 수술어로 도와줄로
+./data/AIhub_300//Sample1/KsponSpeech_000004.pcm	그 안경원도 약하서 먹어 보고 한 동안 열락이 안된 적 있었단 말이 한들어 온 지었던 건지 어더라
+./data/AIhub_300//Sample1/KsponSpeech_000031.pcm	아 그건 절대로 앉았어
+./data/AIhub_300//Sample1/KsponSpeech_000016.pcm	저기 전에 있잖아
+./data/AIhub_300//Sample1/KsponSpeech_000059.pcm	진짜 우리나라 진짜 아니었었는지 아니었지 모요지지 않았어
+./data/AIhub_300//Sample1/KsponSpeech_000008.pcm	저기 전에 진짜 작아졌는데 진짜 아니었어지
+./data/AIhub_300//Sample1/KsponSpeech_000048.pcm	맞을 거고 지금은 알바를 잡고 있는 거 같아
+./data/AIhub_300//Sample1/KsponSpeech_000009.pcm	너도 몰라 아 그 스리즈 파나도 한 번 봤어
+./data/AIhub_300//Sample1/KsponSpeech_000027.pcm	아 비영 사주는 거 없어
+./data/AIhub_300//Sample1/KsponSpeech_000050.pcm	무슨 형은 거 수저워야지
+./data/AIhub_300//Sample1/KsponSpeech_000029.pcm	저기 전에 진짜 작아졌는데 진짜 아니었어지
+./data/AIhub_300//Sample1/KsponSpeech_000064.pcm	사인바이 이런 거 좀 시크게 무서워
+./data/AIhub_300//Sample1/KsponSpeech_000054.pcm	진짜 잘 찾았었는데 진짜 작당했어
+./data/AIhub_300//Sample1/KsponSpeech_000068.pcm	그래서 나 아마 아찜에 숙 개쳐나 실거야 이르거 된 근데 부분이 지났는데, 아주 건 시래에 아주 거 아니겠더니 안 시간은 거 아는 같은 거 아니라 수도 어는 거야 했어
+./data/AIhub_300//Sample1/KsponSpeech_000049.pcm	나는 노 먹지 영화 걱지 들어오고 순간을 달부터는 갈비슷 간다 중안에 거든
+./data/AIhub_300//Sample1/KsponSpeech_000035.pcm	진짜 우리나라 진짜 아니었었는지 아니었는데 진짜 장사 장난장 나잖았어
+./data/AIhub_300//Sample1/KsponSpeech_000012.pcm	시간 안에 플로그램이 다르고 유럽 시로 그러고 있었어
+./data/AIhub_300//Sample1/KsponSpeech_000002.pcm	나는 올력수인데 어서 저하는 다시 나가겠는데 애가 필요 아우로 아줌도 좀 있어야 되고 늘들어가고
+./data/AIhub_300//Sample1/KsponSpeech_000073.pcm	저기 앉아서 너는 장난감이 다섯 가지고 있었잖아
+./data/AIhub_300//Sample1/KsponSpeech_000072.pcm	저기 아직도 어디서 먹었는지 아니었어 내가 이러났어
+./data/AIhub_300//Sample1/KsponSpeech_000075.pcm	아, 그래서 팔버리기를 먹으면 우리 아이들과 고 비 킬로아 슬면은 아이클로 바꾼 세이거 한 거 매었으면 한다서 그런 거 만찮은 곳은 감을 공 그런 가은 거 만 사 아 아 가는 거 거 마 더어 가 마
+./data/AIhub_300//Sample1/KsponSpeech_000023.pcm	방지카는 가운데 가지가 아니래도 내가 가지가 여자니 안되니까
+./data/AIhub_300//Sample1/KsponSpeech_000020.pcm	아, 서유 때 디베이켓 매으로 고입하고 옆집 장난 오면
+./data/AIhub_300//Sample1/KsponSpeech_000019.pcm	네 나만 아마는 것도 한 파란 데는 다 하고
+./data/AIhub_300//Sample1/KsponSpeech_000022.pcm	남도는 피자 독서전 데너는 무난저 찾아져다줄 챙겨봤어
+./data/AIhub_300//Sample1/KsponSpeech_000025.pcm	진짜 우리나라 진짜 작당하지
+./data/AIhub_300//Sample1/KsponSpeech_000026.pcm	저기 앉아서 너는 진짜 아니었어
+./data/AIhub_300//Sample1/KsponSpeech_000014.pcm	원래는 이만원 고이동도 모둥 부르는데
+./data/AIhub_300//Sample1/KsponSpeech_000056.pcm	안근 여우로 바고 여울어서람이 빼달리고 홍바랑 놀다를고 호든 자기 거신이면 다이면 어떡하는 거야
+./data/AIhub_300//Sample1/KsponSpeech_000018.pcm	나 여자친구도 열과 갔었는지
+./data/AIhub_300//Sample1/KsponSpeech_000007.pcm	직장 차 사일 갰다가 말고 시장 안 되면 스쿼터나 도착했다, 그건 생각 들더라고야 하는 게 좀 ㄱ안이었지
+./data/AIhub_300//Sample1/KsponSpeech_000074.pcm	이런 오전이 열한 시십 받아 주게 된 거지
+./data/AIhub_300//Sample1/KsponSpeech_000041.pcm	저기 저기까지 해야 어깨지
+./data/AIhub_300//Sample1/KsponSpeech_000015.pcm	오늘은 사원이랑 것보다는 내 신도 먹거리가 먹거리가 아무리 입만 적던가 봤어
+./data/AIhub_300//Sample1/KsponSpeech_000057.pcm	진짜 우리나라 진짜 우리 아니라 지나가지가 나는 진짜 있어
+./data/AIhub_300//Sample1/KsponSpeech_000055.pcm	기스하니 니 대로 알저마가 냈어요 듣는
+./data/AIhub_300//Sample1/KsponSpeech_000039.pcm	결국은 소습 시간 연도에 본슨을 해오라고 여기까 사체마 아 내 할 게 눈어가고 놀러오라고
+./data/AIhub_300//Sample1/KsponSpeech_000046.pcm	나 연백 음록 음은 먹으면 머그마고 그런 거 올리는 거로 나일린다고 반드다 잘 모르겠어
+./data/AIhub_300//Sample1/KsponSpeech_000061.pcm	저기 앉아서 너는 장난감이 아니잖아
+./data/AIhub_300//Sample1/KsponSpeech_000060.pcm	이거는 그래도 응 성도 한대
+./data/AIhub_300//Sample1/KsponSpeech_000063.pcm	저기 전에 어디서 찍하는 건지 아니고 그랬지다
+./data/AIhub_300//Sample1/KsponSpeech_000040.pcm	그래서 그런 거 토다고 가지가 아니었어
+./data/AIhub_300//Sample1/KsponSpeech_000051.pcm	저기 앉아서 너는 자리인지 알려줬어요
+./data/AIhub_300//Sample1/KsponSpeech_000067.pcm	캔은 캐나다에서 내일 오래 마에 바나주는 안 먹기 했나
+./data/AIhub_300//Sample1/KsponSpeech_000034.pcm	불편하자 화장실
+./data/AIhub_300//Sample1/KsponSpeech_000036.pcm	저기 전에 진짜 작아졌는데 진짜 작당잖아졌어지잖아졌어지지
+./data/AIhub_300//Sample1/KsponSpeech_000066.pcm	니가 발이 간 가져오라고 재즈 가지고 팔경한 챙겼어
+./data/AIhub_300//Sample1/KsponSpeech_000043.pcm	저기 앉아서 나 아직 이어났어
+./data/AIhub_300//Sample1/KsponSpeech_000038.pcm	저기 전에 젖소까지는 장가지도 않았잖아
+./data/AIhub_300//Sample1/KsponSpeech_000001.pcm	오늘은 그래도 인기 아니잖아
+./data/AIhub_300//Sample1/KsponSpeech_000044.pcm	저기 앉아서 너는 장난감이 아니지 않았는데 진짜 어쩌지잖아졌어
+./data/AIhub_300//Sample1/KsponSpeech_000030.pcm	카레이블라가 커리저그 카레이라 같이 이를 거의 손스만 만든하고 시작해야 할 것도 이렇게 파악해야 하는 게 좋은 거래에 거 같아
+./data/AIhub_300//Sample1/KsponSpeech_000062.pcm	저거 지금 안 해서 알을 때는
+./data/AIhub_300//Sample1/KsponSpeech_000010.pcm	저기 전에 저기 앉아서 가장 찍었는지는 장사잖아졌어지잖아졌어ㅇ지었네어지어지잖않아는지어지어지어지지어진어진진 해어 거 거 거 거진어 거어 거
+./data/AIhub_300//Sample1/KsponSpeech_000021.pcm	저기 전에 젖소까지는 장난치니까 내가 너무 더 장난게 너지 않았었어지어진진지 않진 거진진지 어지진 어지 해 어 어 ㄴ ㄴ ㄴ 거 ㄴ 거 ㄴ ㄴ 거ㄴ ㄴ ㄴ ㄴ ㄴ
+./data/AIhub_300//Sample1/KsponSpeech_000037.pcm	저기 아니라 가장 안 사람은 가장 안 알려줬어 그랬는지 알라고 생각은 거지다
+./data/AIhub_300//Sample1/KsponSpeech_000017.pcm	저기 전에 있지만 장난감이 아니지 않았어 내 자는 건지 않았어 내 거라지잖았어 너는 거진 거진 거지지었었는ㄴ는 거ㄴ는 ㄴ 너 ㄴ 너 너 너 너 너 ㄴ 너 너 ㄴ
+./data/AIhub_300//Sample1/KsponSpeech_000058.pcm	너 더도 이스분영에 브로패스 같을 때 동말다 혼자 가고 서운이 난 써도 같은 걸 모르는 걸 보고 사는 데시고 아닐 건데 쏙은 거 같은데도 모 많은 거질 거 도 마 마 두 머 마 만ㅡㄴ 가 ㅆ 고어 가 ㅆ ㅆ 쓰 거 고 거 마 마 가 고 마 는ㅡ너 고 더 다 다 도 마 거 고 마 마 마
+./data/AIhub_300//Sample1/KsponSpeech_000006.pcm	저기 앉아서 너는 진짜 아니었는지 알려줬어지는 건질지 않는다고 그런 거지 않았었어지어진지진지 어진지어지었지어지어어
+./data/AIhub_300//Sample3/KsponSpeech_000197.pcm	아직 그때 이런 거 나와지고 아니고 어딨어
+./data/AIhub_300//Sample3/KsponSpeech_000153.pcm	저기 앉아서 너는 장난감이 아니잖아졌어지는 건지 않았는지 않아지진닪않지않았어지어진지어지지어지진지 해어지지어지진 해어 거
+./data/AIhub_300//Sample3/KsponSpeech_000180.pcm	지금 일주일에 제일 재밌는지 장난치잖아
+./data/AIhub_300//Sample3/KsponSpeech_000155.pcm	그 제그업 가이 폭 싸니까 직접 해 먹으면은 머그거 이 갈비 이사리가 항정사랑 사서 꺼먹한 거 있다가면 얘기 모자
+./data/AIhub_300//Sample3/KsponSpeech_000170.pcm	소율와이를 수업 주머니에 가봤
+./data/AIhub_300//Sample3/KsponSpeech_000202.pcm	이 평일에는 성초니 회사지 이라고 주말에는 올 푸줄하고
+./data/AIhub_300//Sample3/KsponSpeech_000162.pcm	저기 앉아도 진짜 아니었는데 진짜 아니었는지 않는다
+./data/AIhub_300//Sample3/KsponSpeech_000200.pcm	그 정도 오르고 그 때문에 다시 해 보이나 있는지
+./data/AIhub_300//Sample3/KsponSpeech_000179.pcm	그건 공무든 인스턴은 라이프 플러스
+./data/AIhub_300//Sample3/KsponSpeech_000181.pcm	진짜 우리나라 제중했는지 장난짜 아니잖아
+./data/AIhub_300//Sample3/KsponSpeech_000205.pcm	저기 앉아서 나왔는지 알았는지 아주 알았어 나잖아지잖는데 잖았어요
+./data/AIhub_300//Sample3/KsponSpeech_000221.pcm	돈가 입만 원 애 내가 하면은 이십만 원이겠다 이래 가지고
+./data/AIhub_300//Sample3/KsponSpeech_000157.pcm	저는 오늘은 손생님 안에도 안 보고 이거 가고 죽으면 안 알고 공증이었어
+./data/AIhub_300//Sample3/KsponSpeech_000169.pcm	저기 있다 어디서 찍는 건 지는 건지 알려줬어지잖아지 그런거지 않았어지언ㄱ지잖았어지
+./data/AIhub_300//Sample3/KsponSpeech_000195.pcm	잘 거가 나 시상 상식 분지 물어봤어 때 진짜 다왕해 가지고 나는데 아까지 온 동그라가스로 만들고 하지 그런 거 같은 가도 많은 거 같은 거 가더 마서 가 마아ㄴ 다
+./data/AIhub_300//Sample3/KsponSpeech_000220.pcm	저기 앉아서 너는 자리인데 잡아줬어 이제 알았어 나왔었어요 아니 갔었어
+./data/AIhub_300//Sample3/KsponSpeech_000208.pcm	너 스트레스만 여행 다리가 알려줘야 했잖아
+./data/AIhub_300//Sample3/KsponSpeech_000183.pcm	지금 어디는 집이 안 지났어 아니잖아
+./data/AIhub_300//Sample3/KsponSpeech_000173.pcm	저기 있다 어디서 찍는 지 알았어
+./data/AIhub_300//Sample3/KsponSpeech_000224.pcm	진짜 우리나라 나는 장난감 가져야 했는지 아나와야 쓰잖아
+./data/AIhub_300//Sample3/KsponSpeech_000188.pcm	주찬 사식을 아이어스를 이기 에피소즈녀면 딘구기, 퍼버리에 시티오를 대로 해서 유십 칠오는 안 알라오나 가야 하는 나안 데
+./data/AIhub_300//Sample3/KsponSpeech_000225.pcm	진짜 우리나라 진짜 우리 엄청 작난 찾았어
+./data/AIhub_300//Sample3/KsponSpeech_000191.pcm	저기 전에 진짜 작아졌는데 진짜 작당잖아졌어지지
+./data/AIhub_300//Sample3/KsponSpeech_000175.pcm	아 핸드모가 너무 조금 보가 가지고 저거 같이 간 구원 없는 곰잡인데 이주 오랬던 말더나야
+./data/AIhub_300//Sample3/KsponSpeech_000193.pcm	저기 전에 젖소까지는 장난치니까 늦잖아
+./data/AIhub_300//Sample3/KsponSpeech_000207.pcm	저기 아니라 가져야 한다고 그랬잖아
+./data/AIhub_300//Sample3/KsponSpeech_000165.pcm	저기 앉아서 너는 지금 아니었어요
+./data/AIhub_300//Sample3/KsponSpeech_000158.pcm	저기 전에 진짜 작아졌는데 진짜 작당잖아졌어지잖아졌어지지
+./data/AIhub_300//Sample3/KsponSpeech_000151.pcm	우주 비통 등에 있는데 아빠 터울이하게 써서 정민이 혹시 오래돼서 안 좋나
+./data/AIhub_300//Sample3/KsponSpeech_000212.pcm	저기 앉아 봐요 아니고 난지도 안도 아니야
+./data/AIhub_300//Sample3/KsponSpeech_000194.pcm	그래 나프웨이에 인 모든 프로그램 루세든 예능이 든 드라마트 아우가 녹당 천만 깜짝 놀라죽도 짝
+./data/AIhub_300//Sample3/KsponSpeech_000187.pcm	저는 저녁은 아닌 배우가 생각을 안 싸지도 않았어
+./data/AIhub_300//Sample3/KsponSpeech_000164.pcm	저기 전에 진짜 작아졌는데 진짜 작당잖아졌어지잖아졌어지잖아지요
+./data/AIhub_300//Sample3/KsponSpeech_000186.pcm	저기 있지만 인생 장가지가 났어
+./data/AIhub_300//Sample3/KsponSpeech_000211.pcm	카이스북에서 따라가지가 있어
+./data/AIhub_300//Sample3/KsponSpeech_000161.pcm	저기 전에 진짜 작아졌는데 진짜 작당잖아졌어지
+./data/AIhub_300//Sample3/KsponSpeech_000214.pcm	코르카 백 무섯이 문무가도 적당해 마르무가 아니고 똥아지더라 달리기도 빨리 그 못한다
+./data/AIhub_300//Sample3/KsponSpeech_000218.pcm	저기 전에 진짜 작아졌는데 장난장이잖아졌어지잖아
+./data/AIhub_300//Sample3/KsponSpeech_000192.pcm	나도 돈은 거 같은데 어딨지
+./data/AIhub_300//Sample3/KsponSpeech_000185.pcm	렇게 있는 엘기라면 사실 빼놓을 섭는 게 있죠
+./data/AIhub_300//Sample3/KsponSpeech_000168.pcm	진 시값이 이 계속 오르니까 자영업장 입장 오스는 정부 당스럽겠지
+./data/AIhub_300//Sample3/KsponSpeech_000166.pcm	그 뭐라도 내일 아니도 코만하게 블라스틱인 내 트랩 가지고 생각하는 건가 뭐가 있지
+./data/AIhub_300//Sample3/KsponSpeech_000196.pcm	통기학교 물 걸을 걸래
+./data/AIhub_300//Sample3/KsponSpeech_000215.pcm	저기 전에 진짜 작아졌는데
+./data/AIhub_300//Sample3/KsponSpeech_000171.pcm	저는 돈은 고이인지는 자전이 있지
+./data/AIhub_300//Sample3/KsponSpeech_000210.pcm	저기 앉아서 너는 진짜 아니었어
+./data/AIhub_300//Sample3/KsponSpeech_000223.pcm	저기 저기 앉아서 있잖아
+./data/AIhub_300//Sample3/KsponSpeech_000222.pcm	저기 인어공주님이 아니잖아
+./data/AIhub_300//Sample3/KsponSpeech_000199.pcm	저기 앉아서 너는 진짜 아니었는지 아니었어
+./data/AIhub_300//Sample3/KsponSpeech_000177.pcm	이모는 캐스리스라겠어
+./data/AIhub_300//Sample3/KsponSpeech_000203.pcm	거기 그렇게 생각하시는 그런 미팅에 영어 태풍 이야간 징생가 나게
+./data/AIhub_300//Sample3/KsponSpeech_000167.pcm	저기 저기 앉아서 나 있어야 했어
+./data/AIhub_300//Sample3/KsponSpeech_000182.pcm	기차는 자란들려 그럼 인제 환불 들어가고
+./data/AIhub_300//Sample3/KsponSpeech_000160.pcm	네 말 듣는 데 말하느냐고 그랬네
+./data/AIhub_300//Sample3/KsponSpeech_000206.pcm	무언저 중 중요하지 자기는 데 무조건 아니라고 그런 건 안되지
+./data/AIhub_300//Sample3/KsponSpeech_000217.pcm	처음엔 학원이랑 나트로 게 들어가도 돼지구는 잘 보려
+./data/AIhub_300//Sample3/KsponSpeech_000216.pcm	저기 앉아서 너는 진짜 우리 아니라고 그랬어
+./data/AIhub_300//Sample3/KsponSpeech_000178.pcm	낮에는 조금 박스문은
+./data/AIhub_300//Sample3/KsponSpeech_000184.pcm	나 여자는 올려 바꿔 없는거야
+./data/AIhub_300//Sample3/KsponSpeech_000190.pcm	안가요 맛있는 맛있는 내가 하네요
+./data/AIhub_300//Sample3/KsponSpeech_000189.pcm	그거 나 좋아졌어
+./data/AIhub_300//Sample3/KsponSpeech_000154.pcm	도대장 진짜 있지
+./data/AIhub_300//Sample3/KsponSpeech_000159.pcm	저기가 먼저 죽는 건 아니고 이제 아니었어
+./data/AIhub_300//Sample3/KsponSpeech_000176.pcm	저기 저기 앉아 있어
+./data/AIhub_300//Sample3/KsponSpeech_000209.pcm	저기 앉아서 너는 진짜 아니었어
+./data/AIhub_300//Sample3/KsponSpeech_000219.pcm	근데 그럼피턴 래얼만 게 아니라 귀여봉을 꽤 사진 거야
+./data/AIhub_300//Sample3/KsponSpeech_000213.pcm	기구지 트럭이 엉운 공 이렇게 싫고
+./data/AIhub_300//Sample3/KsponSpeech_000163.pcm	돈 좀 돈 오고 누구나 공원
+./data/AIhub_300//Sample3/KsponSpeech_000172.pcm	아 그냥 한 몇 칠
+./data/AIhub_300//Sample3/KsponSpeech_000174.pcm	진짜 우리나라 진짜 오늘이 어디지 않는데
+./data/AIhub_300//Sample3/KsponSpeech_000198.pcm	인곳다 요리는 유키로로 빨리 겄다가 한 입은 발리되었다
+./data/AIhub_300//Sample3/KsponSpeech_000204.pcm	이게 어떻게 오시대 그랬지 음 살가 칼십 펄리느 일하면서 어떻게 활요가 그랬지
+./data/AIhub_300//Sample3/KsponSpeech_000152.pcm	대회에 길게 비슷하다 보다
+./data/AIhub_300//Sample3/KsponSpeech_000201.pcm	길 세상에 하고 싶다고 할 그 지금을 하는 사용이 외친한 테이커
+./data/AIhub_300//Sample3/KsponSpeech_000156.pcm	저기 앉아서 가장 찍는 진짜 장난감였잖아
+./data/AIhub_300//Sample2/KsponSpeech_000094.pcm	저기 전에 진짜 작아졌는데 진짜 아니었어지잖아졌어지
+./data/AIhub_300//Sample2/KsponSpeech_000098.pcm	저는 안 먹은지 오래 놨는데
+./data/AIhub_300//Sample2/KsponSpeech_000105.pcm	그러는 그 그 프로그래픽 드로제 있는 기가 건데에 그 유명한 약구 집지 저로 마음에 올라가가고 생각하는 걸 매이 있다면 ㄱ은 거 하지
+./data/AIhub_300//Sample2/KsponSpeech_000106.pcm	잘난척이랑 당한 건 좀 많이 하잖아
+./data/AIhub_300//Sample2/KsponSpeech_000148.pcm	그것도 테일라가 어디로 가기 정상도야
+./data/AIhub_300//Sample2/KsponSpeech_000077.pcm	진짜 우리나라 진짜 우리 아니자
+./data/AIhub_300//Sample2/KsponSpeech_000143.pcm	카키아몬 정거울 재대로 정황을 고르러 그렇든다는 게 보이스라 좋은 재도운 것도 아라에 두븐것도 그랬다
+./data/AIhub_300//Sample2/KsponSpeech_000135.pcm	담당이라만 여수증이 예쁘다에 기주는 그곳이 아니잖아 갱중 남자다 온 적이 좋겠다 어두면 되겠어
+./data/AIhub_300//Sample2/KsponSpeech_000134.pcm	내가 제일 좋아하는 남자등이지
+./data/AIhub_300//Sample2/KsponSpeech_000122.pcm	징갈 크가루아 때 차 탈 때 낭간대고 그때부고는 딱 해서 먹어두는 정정도 보는 정도 난보고 이런 거 모르지
+./data/AIhub_300//Sample2/KsponSpeech_000150.pcm	저기 전에 진짜 작아졌는데 진짜 아니었어지
+./data/AIhub_300//Sample2/KsponSpeech_000124.pcm	그럼 아끼 이번 주 목욕 우유를 학교 운동했네
+./data/AIhub_300//Sample2/KsponSpeech_000118.pcm	저는 이제 저기 앉아 있다는지 알았지만 장난갔어 아니잖아
+./data/AIhub_300//Sample2/KsponSpeech_000141.pcm	진짜 우리나라 진짜 아니었었는지 아니야
+./data/AIhub_300//Sample2/KsponSpeech_000114.pcm	저기 전에 어디서 났는지 알려줘야 하는지 난쳐줬어
+./data/AIhub_300//Sample2/KsponSpeech_000080.pcm	영자들이 학교 주면 내일 방 이 대 연대해 홍대 사간대 이르톤을 그래도 코로나도 무시하더라고요
+./data/AIhub_300//Sample2/KsponSpeech_000085.pcm	나는 그 너 해외여행 간 적 했어
+./data/AIhub_300//Sample2/KsponSpeech_000125.pcm	저기 전에 진짜 작아졌어 아니잖아
+./data/AIhub_300//Sample2/KsponSpeech_000129.pcm	아니 어떤 데 그거 차라 그렇게 그런 거 나니고 했던 몸을 초가 눈동하게 내가 이런 거야
+./data/AIhub_300//Sample2/KsponSpeech_000079.pcm	저기 있다 온다지는 주는 장난감이 아니지 않나 쓰진이었잖아
+./data/AIhub_300//Sample2/KsponSpeech_000115.pcm	어른 진짜 나를 선물하게 손노게 중에 어떻게 도망가봤어
+./data/AIhub_300//Sample2/KsponSpeech_000096.pcm	그런 데만 가면 그 도와 버스를 너무 좋아해
+./data/AIhub_300//Sample2/KsponSpeech_000130.pcm	저기 있다 저거 망가졌나 진짜 아니야
+./data/AIhub_300//Sample2/KsponSpeech_000117.pcm	뜨거워 가려고 했더니 자격증 팔아당하고 했더라고
+./data/AIhub_300//Sample2/KsponSpeech_000083.pcm	저는 어떤 어떻게 그도 인전적 들지도 않았지만지
+./data/AIhub_300//Sample2/KsponSpeech_000126.pcm	제가 몇 개 주셔 가지고 그건 아직 나가서 가자
+./data/AIhub_300//Sample2/KsponSpeech_000091.pcm	저기 앉아서 가장 찍었는지 알려줬어지는 건지 않았는지
+./data/AIhub_300//Sample2/KsponSpeech_000137.pcm	그날 너는 약에서 어머니이가 야외구 집 모자 가져가지고 가지 막으로 나가나 그랬어
+./data/AIhub_300//Sample2/KsponSpeech_000099.pcm	채상이 가봐가 맨날 사랑에 부그에서 이북하고 엄덩이 슬퍼한 거 말아 먹은 거 한달라 수가 없다고 봐라갔다 서 무 없라
+./data/AIhub_300//Sample2/KsponSpeech_000113.pcm	팔인얼은 어느 동아로 버거지구나 해 가지고 대반의 동안으로 마슨 것 마음이 거 여수정이었거든
+./data/AIhub_300//Sample2/KsponSpeech_000123.pcm	저기 있다 보자 있는지 않는데 진짜 얼마나 찢는지 않는댔어
+./data/AIhub_300//Sample2/KsponSpeech_000093.pcm	저기 있는 저는 언제 있지
+./data/AIhub_300//Sample2/KsponSpeech_000110.pcm	더 내 먹어 수수로 갈 거로 세웠다는데도 정치 안오는데도 깼고
+./data/AIhub_300//Sample2/KsponSpeech_000084.pcm	골든 미안해 봐 하나 달즘 미생가 이래줘
+./data/AIhub_300//Sample2/KsponSpeech_000109.pcm	오빠가 없다가 나가면은
+./data/AIhub_300//Sample2/KsponSpeech_000116.pcm	그의 루얼 신을 말서 뭔 반두고 내가 주고
+./data/AIhub_300//Sample2/KsponSpeech_000103.pcm	바다에 가고 하나 야채 피바도 기로 하지 하나로 연명하고 있어
+./data/AIhub_300//Sample2/KsponSpeech_000100.pcm	저기 앉아서 너는 진짜 아니었는지 아니었어
+./data/AIhub_300//Sample2/KsponSpeech_000144.pcm	나도 많이 떨은 해마다 아니고 길가 잔치가 육폭 달래나 이 점 옆으로
+./data/AIhub_300//Sample2/KsponSpeech_000131.pcm	저기 앉아서 너는 잡아 있어야 했어나 선생님이 다서 가잖는 건지 않아지 갔어 가는더 가잖았어 거지지어 거 거지 거진 거지 거 ㄴ 가 ㄴ 가 ㄴ ㅆ ㅆ어 ㅆ ㅓ ㅓ ㄴ ㅓ ㄴ ㅓ ㄴ ㄴ
+./data/AIhub_300//Sample2/KsponSpeech_000119.pcm	저기 전에 젖소까지는 진짜 아니었는지 아니잖아졌더라지는지 않았는더라지짆요
+./data/AIhub_300//Sample2/KsponSpeech_000101.pcm	저기 앉아서 너는 장난감이 아니지 않았는지 안도 나는 건지도 다서 가잖았는지어진지지었는지어 거지지어 ㄴ지어지지어 ㄴ지어지 ㅆ어지 ㅆ어
+./data/AIhub_300//Sample2/KsponSpeech_000127.pcm	저기 앉아서 너는 장난감이 다섯 가지고 있어야지 않았는데 거질 거지 않았었어어 가잖았어 거지었어 거지어 ㅆ지어 ㅆ어지어 ㅆ어지어 ㅆ어
+./data/AIhub_300//Sample2/KsponSpeech_000147.pcm	오에 무닌 걷는 반법 그런 건 아니면 그님이 왕고, 그거 인사 하는 방법 당형 두 있는 방법이 있는 건 어파인 상값은 거 하는 만 거 맘은 가 먹었은 거더마 만은 마 가은 거 게 어
+./data/AIhub_300//Sample2/KsponSpeech_000145.pcm	옛날에서 오만 원 가지고 나오는 학원 사장에나 이런 건지 하는 가장 났는데
+./data/AIhub_300//Sample2/KsponSpeech_000120.pcm	너 어제 분려하는 그럼 옷 인기가 좋아 입고 있어
+./data/AIhub_300//Sample2/KsponSpeech_000146.pcm	저기 전에 젖소까지는 안 씻잖아지는 건지 않는지 않았어진단 거짆어지잖않지잖않않지어잖지지지
+./data/AIhub_300//Sample2/KsponSpeech_000132.pcm	그저는 저건 보니까 자리 언제 잔다줬어
+./data/AIhub_300//Sample2/KsponSpeech_000076.pcm	여기서랑 여기 그 어디서 상승
+./data/AIhub_300//Sample2/KsponSpeech_000133.pcm	저건 아니야 쓰지
+./data/AIhub_300//Sample2/KsponSpeech_000086.pcm	진 설 때만에 왔는데 진짜 어디지
+./data/AIhub_300//Sample2/KsponSpeech_000087.pcm	저기 저기 앉아 있어야 해 주는 거야
+./data/AIhub_300//Sample2/KsponSpeech_000142.pcm	저기 전에 젖을 거잖아
+./data/AIhub_300//Sample2/KsponSpeech_000136.pcm	그게 안주 보라면은 그럴 깨진 않아 내 마라톤이라는 걸 사서 너무 기로 하잖아 이게 많아야 되고
+./data/AIhub_300//Sample2/KsponSpeech_000095.pcm	저기 앉아서 너는 장난감이 아니잖아
+./data/AIhub_300//Sample2/KsponSpeech_000112.pcm	공가원이 좋은 애 맞았거든
+./data/AIhub_300//Sample2/KsponSpeech_000140.pcm	아이런 친구 네어피사서 정말 좋다 이런 생각을 했는데
+./data/AIhub_300//Sample2/KsponSpeech_000102.pcm	어 그렇군 비도 설치킨 사진파리트가 안 갔었는데
+./data/AIhub_300//Sample2/KsponSpeech_000104.pcm	그렇구가 네 말을 그런 뭐해도 주는 거 아까이거지
+./data/AIhub_300//Sample2/KsponSpeech_000149.pcm	저기 전에 젖소 장난감사 자장 찍었잖아
+./data/AIhub_300//Sample2/KsponSpeech_000139.pcm	다 카서 타닥 한려 다들 이제 못한 다 못하겠다 그런데 단백 만에도 받았다는데 그 배워 놀랐는데
+./data/AIhub_300//Sample2/KsponSpeech_000088.pcm	신기하다 무슨 알바를 그렇게 신장해
+./data/AIhub_300//Sample2/KsponSpeech_000078.pcm	건강 때 연대 병이 들었고 편의보러 여섯 가려서 에타 학교가 있었어 팔아 암니다
+./data/AIhub_300//Sample2/KsponSpeech_000128.pcm	저기 앉아서 너는 장난감이 아니지 않았어
+./data/AIhub_300//Sample2/KsponSpeech_000092.pcm	동물 못 다른 게 만들어 먹던 그런 건 없었어
+./data/AIhub_300//Sample2/KsponSpeech_000090.pcm	얼마나 전상 장난감 사줬어
+./data/AIhub_300//Sample2/KsponSpeech_000081.pcm	그래서 지면 일반한 것 같던데
+./data/AIhub_300//Sample2/KsponSpeech_000138.pcm	저기 앉아서 너는 자리에 쓰진 도전했어
+./data/AIhub_300//Sample2/KsponSpeech_000097.pcm	미워하는데 지금 씬 데시어노부터 기반을 받아서 게임은 시샵이라는 걸 꺼어
+./data/AIhub_300//Sample2/KsponSpeech_000111.pcm	어 호주에 안 돼요
+./data/AIhub_300//Sample2/KsponSpeech_000108.pcm	이거로 변이 버스껏 근데 난 그 학교 학교 어줘 듣기 부실한 그런 얘기하고
+./data/AIhub_300//Sample2/KsponSpeech_000082.pcm	진에어가 여자
+./data/AIhub_300//Sample2/KsponSpeech_000089.pcm	저기 전에 있는지는 장난감이 아니지
+./data/AIhub_300//Sample2/KsponSpeech_000107.pcm	어디 그런 시간을 볼 수 있지
+./data/AIhub_300//Sample2/KsponSpeech_000121.pcm	시험이 아마 집에 가려나 거지 하자

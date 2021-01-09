@@ -21,7 +21,9 @@ from espnet2.asr.decoder.abs_decoder import AbsDecoder
 from espnet2.asr.encoder.abs_encoder import AbsEncoder
 from espnet2.asr.frontend.abs_frontend import AbsFrontend
 from espnet2.asr.specaug.abs_specaug import AbsSpecAug
+from espnet2.asr.specaug.specaug import SpecAug
 from espnet2.layers.abs_normalize import AbsNormalize
+from espnet2.layers.global_mvn import GlobalMVN
 from espnet2.torch_utils.device_funcs import force_gatherable
 from espnet2.train.abs_espnet_model import AbsESPnetModel
 #from espnet.nets.pytorch_backend.e2e_asr_transformer import E2E
@@ -49,7 +51,7 @@ class ASRModel(torch.nn.Module):
         self.ctc_weight = config.mtlalpha
         self.token_list = config.char_list.copy()
 
-        self.specaug = None
+        self.specaug = SpecAug()
         self.normalize = None
 
         self.frontend = CustomFrontend(fs = SAMPLE_RATE,

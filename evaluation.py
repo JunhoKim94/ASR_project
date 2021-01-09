@@ -26,17 +26,19 @@ input_size = 80
 batch_size = 8
 char = True
 
-#with open("./save_model/split_data.pickle", "rb") as f:
-#    a = pickle.load(f)
-#test_path = a["test_path"]
-#test_trg = a["test_trg"]
+with open("./save_model/split_data.pickle", "rb") as f:
+    a = pickle.load(f)
+test_path = a["test_path"]
+test_trg = a["test_trg"]
+
 
 with open("./save_model/char2idx.pickle", "rb") as f:
     char2idx = pickle.load(f)
 
+
 print(char2idx)
-test_path = find_paths(args.input_dir)
-test_trg = None
+#test_path = find_paths(args.input_dir)
+#test_trg = None
 
 test_loader = Batch_Loader(batch_size, device, test_path, test_trg, char2idx)
 
@@ -57,7 +59,7 @@ model = ASRModel(input_size = input_size,
                 device = device)
 
 model.to(device)
-model.load_state_dict(torch.load("./save_model/best_ctc_0.4.pt", map_location = device))
+model.load_state_dict(torch.load("./save_model/best_ctc.pt", map_location = device))
 
 if test_trg == None:
     eval_text(model, test_loader, recog_config, token_list, save_path = args.output_dir, char = char)

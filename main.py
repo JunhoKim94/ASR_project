@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.ERROR)
 
 writer = SummaryWriter(comment = "ASR-Transformers")
 
-device = torch.device("cuda:2")
+device = torch.device("cuda:0")
 #device = torch.device("cpu")
 input_size = 80
 #Hyper parameters
@@ -30,9 +30,14 @@ char = True
 
 SAMPLE_RATE = 16000
 
-path, trg, char2idx = preprocess_data(char = char)
+#path, trg, char2idx = preprocess_data(char = char)
+#ret = split_path(path, trg, 0.025, save = True)
+with open("./save_model/split_data.pickle", "rb") as f:
+    ret = pickle.load(f)
 
-ret = split_path(path, trg, 0.025, save = True)
+with open("./save_model/char2idx.pickle", "rb") as f:
+    char2idx = pickle.load(f)
+
 
 train_path = ret["train_path"]
 train_trg = ret["train_trg"]
@@ -65,18 +70,21 @@ model = ASRModel(input_size = input_size,
                 config = config,
                 device = device)
 
+model.load_state_dict(torch.load("./save_model/best_ctc.pt", map_location = device))
 
 #model.to(device)
 #model = torch.nn.DataParallel(model)
 model.to(device)
-optimizer = torch.optim.Adam(model.parameters(), lr = lr)
+optimizer = torch.optim.Adam(model.parameters(), lr = lr, weight_decay = 1e-5)
 
 emb_size = config.adim
 
+cer, wer, val_acc = val_score(model, val_loader)
+
 st = time.time()
 total = len(dataloader) // batch_size + 1
-best_acc = 0
-step = 1
+best_acc = val_acc
+step = total * 40
 for epoch in range(epochs):
     epoch_loss = 0
     epoch_acc = 0
@@ -97,6 +105,7 @@ for epoch in range(epochs):
 
         writer.add_scalar("loss/train", loss.item(), step)
         writer.add_scalar("acc/train", acc, step)
+        writer.add_scalar("lr/train", lr, step)
 
         epoch_loss += loss.item()
         epoch_acc += acc
@@ -109,7 +118,7 @@ for epoch in range(epochs):
     epoch_loss /= total
     epoch_acc /= total
 
-    if epoch % 4 == 0:
+    if epoch % 1 == 0:
         current_time = round((time.time() - st) / 3600 , 4)
         cer, wer, val_acc = val_score(model, val_loader)
         #ys_hat = ret_dict["ys_hat"]
@@ -119,5 +128,5 @@ for epoch in range(epochs):
         if best_acc < val_acc:
             best_acc = val_acc
             save_text(model, test_loader, recog_config, token_list, save_path = "./results/result_ctc.txt", char = char)
-            torch.save(model.state_dict(), "./save_model/best_ctc.pt")
+            torch.save(model.state_dict(), "./save_model/best_ctc_fine_abs.pt")
 

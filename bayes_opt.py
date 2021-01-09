@@ -11,8 +11,9 @@ logging.basicConfig(level=logging.ERROR)
 import torch
 from loader import *
 from model.model import ASRModel
+import time
 
-device = torch.device("cuda:3")
+device = torch.device("cuda:0")
 #device = torch.device("cpu")
 input_size = 80
 batch_size = 4
@@ -49,12 +50,14 @@ model.load_state_dict(torch.load("./save_model/best_ctc.pt", map_location = devi
 #dim_freeze = Categorical(2)
 
 
-dim_ctc = Real(low = 0.1, high = 0.5, name = "ctc")
-dim_beam = Integer(low = 2, high = 5, name = "beam")
-dim_penalty = Real(low = 0.4, high = 2.0, name = "penalty")
+dim_ctc = Real(low = 0.0, high = 1.0, name = "ctc")
+dim_beam = Integer(low = 1, high = 7, name = "beam")
+dim_penalty = Real(low = 0.2, high = 2.0, name = "penalty")
 
 dimensions = [dim_ctc, dim_beam, dim_penalty]
-default_parameters = [0.3, 3, 1.2]
+default_parameters = [0.2, 3, 1.2]
+
+st = time.time()
 
 @use_named_args(dimensions = dimensions)
 def fitness(ctc, beam, penalty):
@@ -66,13 +69,13 @@ def fitness(ctc, beam, penalty):
     recog_config.penalty = penalty
 
     score = save_text(model, test_loader, recog_config, token_list, save_path = "./results/result_ctc_test.txt", char = char)
-    print(score)
-    return -score
+    print(f"current score : {1 - score} | time : {(time.time() - st) / 3600} hours")
+    return score
 
 search_result = gp_minimize(func = fitness, 
                             dimensions = dimensions,
                             acq_func = "EI",
-                            n_calls = 12,
+                            n_calls = 20,
                             x0 = default_parameters)
 
 print(search_result.x)

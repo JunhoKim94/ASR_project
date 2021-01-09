@@ -1,0 +1,10 @@
+chainer
+hgtk
+python-Levenshtein
+typeguard
+librosa
+configargparse
+torch_complex
+pytorch_wpe
+humanfriendly
+scikit-optimize

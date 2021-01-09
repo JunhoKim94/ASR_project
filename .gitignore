@@ -4,3 +4,4 @@ save_model/
 runs/
 *.pyc
 __pycache__/
+data/2020_자유대화_Hackarthon_학습DB/
