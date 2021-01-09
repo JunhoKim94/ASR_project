@@ -23,7 +23,7 @@ from espnet2.asr.frontend.abs_frontend import AbsFrontend
 from espnet2.asr.specaug.abs_specaug import AbsSpecAug
 from espnet2.asr.specaug.specaug import SpecAug
 from espnet2.layers.abs_normalize import AbsNormalize
-from espnet2.layers.global_mvn import GlobalMVN
+from espnet2.layers.utterance_mvn import UtteranceMVN
 from espnet2.torch_utils.device_funcs import force_gatherable
 from espnet2.train.abs_espnet_model import AbsESPnetModel
 #from espnet.nets.pytorch_backend.e2e_asr_transformer import E2E
@@ -51,8 +51,9 @@ class ASRModel(torch.nn.Module):
         self.ctc_weight = config.mtlalpha
         self.token_list = config.char_list.copy()
 
-        self.specaug = SpecAug()
-        self.normalize = None
+
+        self.specaug = SpecAug() if config.specaug else None
+        self.normalize = UtteranceMVN() if config.normalize else None
 
         self.frontend = CustomFrontend(fs = SAMPLE_RATE,
                             n_fft= 512,
@@ -90,8 +91,6 @@ class ASRModel(torch.nn.Module):
         # 3. Normalization for feature: e.g. Global-CMVN, Utterance-CMVN
         if self.normalize is not None:
             feats, feats_lengths = self.normalize(feats, feats_lengths)
-            if self.adddiontal_utt_mvn is not None:
-                feats, feats_lengths = self.adddiontal_utt_mvn(feats, feats_lengths)
 
 
         return feats, feats_lengths

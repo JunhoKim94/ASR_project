@@ -26,6 +26,8 @@ class Config:
         self.mtlalpha = 0.3
         self.transformer_init = "pytorch"
         self.ignore_id = -1
+        self.normalize = False
+        self.specaug = False
 
 class Recog_config:
     def __init__(self):

@@ -15,7 +15,6 @@ from torch.utils.tensorboard import SummaryWriter
 import logging
 logging.basicConfig(level=logging.ERROR)
 
-
 writer = SummaryWriter(comment = "ASR-Transformers")
 
 device = torch.device("cuda:0")

@@ -14,7 +14,6 @@ from espnet.nets.asr_interface import ASRInterface
 from espnet.nets.ctc_prefix_score import CTCPrefixScore
 from espnet.nets.e2e_asr_common import end_detect
 from espnet.nets.e2e_asr_common import ErrorCalculator
-#from espnet.nets.pytorch_backend.ctc import CTC
 from model.ctc import CTC
 from espnet.nets.pytorch_backend.e2e_asr import CTC_LOSS_THRESHOLD
 from espnet.nets.pytorch_backend.e2e_asr import Reporter
