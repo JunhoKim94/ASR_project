@@ -17,13 +17,13 @@ logging.basicConfig(level=logging.ERROR)
 
 writer = SummaryWriter(comment = "ASR-Transformers")
 
-device = torch.device("cuda:0")
+device = torch.device("cuda:1")
 #device = torch.device("cpu")
 input_size = 80
 #Hyper parameters
 epochs = 80
 batch_size = 8
-lr = 0.0025
+lr = 0.025
 warm_up = 8000
 char = True
 
@@ -69,21 +69,18 @@ model = ASRModel(input_size = input_size,
                 config = config,
                 device = device)
 
-model.load_state_dict(torch.load("./save_model/best_ctc.pt", map_location = device))
+model.load_state_dict(torch.load("./save_model/best_ctc_norm_add.pt", map_location = device))
 
-#model.to(device)
-#model = torch.nn.DataParallel(model)
 model.to(device)
 optimizer = torch.optim.Adam(model.parameters(), lr = lr, weight_decay = 1e-5)
 
 emb_size = config.adim
-
 cer, wer, val_acc = val_score(model, val_loader)
-
+print(val_acc)
 st = time.time()
 total = len(dataloader) // batch_size + 1
 best_acc = val_acc
-step = total * 40
+step = 900000
 for epoch in range(epochs):
     epoch_loss = 0
     epoch_acc = 0
@@ -122,10 +119,13 @@ for epoch in range(epochs):
         cer, wer, val_acc = val_score(model, val_loader)
         #ys_hat = ret_dict["ys_hat"]
         #print(ys_hat[0], trg[0])
-        writer.close()
+        
         print(f"epoch : {epoch} | epoch loss : {epoch_loss} | acc : {epoch_acc} | val acc : {val_acc} | cer : {cer} | wer: {wer} | time : {current_time}")
         if best_acc < val_acc:
             best_acc = val_acc
-            save_text(model, test_loader, recog_config, token_list, save_path = "./results/result_ctc.txt", char = char)
-            torch.save(model.state_dict(), "./save_model/best_ctc_fine_abs.pt")
+            save_text(model, test_loader, recog_config, token_list, save_path = "./results/result_norm.txt", char = char)
+            torch.save(model.state_dict(), "./save_model/best_ctc_last.pt")
 
+writer.close()
+
+#epoch : 25 

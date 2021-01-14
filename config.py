@@ -26,14 +26,14 @@ class Config:
         self.mtlalpha = 0.3
         self.transformer_init = "pytorch"
         self.ignore_id = -1
-        self.normalize = False
-        self.specaug = False
+        self.normalize = True
+        self.specaug = True
 
 class Recog_config:
     def __init__(self):
-        self.ctc_weight = 0.3
+        self.ctc_weight = 0 #0.141849
         self.beam_size = 3
-        self.penalty = 0.7
+        self.penalty = 0.2 #0.592332
         self.maxlenratio = 0.8
         self.minlenratio = 0
         self.lm_weight = 0

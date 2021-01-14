@@ -55,6 +55,8 @@ class ASRModel(torch.nn.Module):
         self.specaug = SpecAug() if config.specaug else None
         self.normalize = UtteranceMVN() if config.normalize else None
 
+        print(self.specaug, self.normalize)
+
         self.frontend = CustomFrontend(fs = SAMPLE_RATE,
                             n_fft= 512,
                             normalized = True,

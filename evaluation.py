@@ -20,17 +20,16 @@ args = parser.parse_args()
 print(f"Your test folder is {args.input_dir}")
 print(f"Your output file is {args.output_dir}")
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 input_size = 80
 #Hyper parameters
-batch_size = 8
+batch_size = 1
 char = True
 
 with open("./save_model/split_data.pickle", "rb") as f:
     a = pickle.load(f)
 test_path = a["test_path"]
 test_trg = a["test_trg"]
-
 
 with open("./save_model/char2idx.pickle", "rb") as f:
     char2idx = pickle.load(f)
@@ -51,6 +50,8 @@ print(vocab_size)
 #Transformer (Seq2Seq) 모델 --> 우리 Acoustic 모델
 
 config = Config(token_list)
+config.specaug = False
+config.normalize = True
 recog_config = Recog_config()
 model = ASRModel(input_size = input_size,
                 vocab_size = vocab_size,
@@ -59,10 +60,10 @@ model = ASRModel(input_size = input_size,
                 device = device)
 
 model.to(device)
-model.load_state_dict(torch.load("./save_model/best_ctc.pt", map_location = device))
+model.load_state_dict(torch.load("./save_model/best_ctc_norm_add.pt", map_location = device))
 
 if test_trg == None:
     eval_text(model, test_loader, recog_config, token_list, save_path = args.output_dir, char = char)
 else:
-    score = save_text(model, test_loader, recog_config, token_list, save_path = "./results/result_ctc_eval.txt", char = char)
+    score = save_text(model, test_loader, recog_config, token_list, save_path = "./results/result_ctc_fine.txt", char = char)
     print((1 - score) * 100)

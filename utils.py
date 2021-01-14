@@ -81,6 +81,8 @@ def save_text(model, val_loader, recog_config, token_list, save_path = "./result
     total_dist = 0
     total_length = 0
 
+    model.eval()
+
     total_size = len(val_loader) // val_loader.batch_size
     if len(val_loader) % val_loader.batch_size != 0:
         total_size += 1
@@ -92,7 +94,7 @@ def save_text(model, val_loader, recog_config, token_list, save_path = "./result
         total_length += length
 
     f.close()
-
+    model.train()
     return total_dist / total_length
 
 

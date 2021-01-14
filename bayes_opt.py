@@ -16,7 +16,7 @@ import time
 device = torch.device("cuda:0")
 #device = torch.device("cpu")
 input_size = 80
-batch_size = 4
+batch_size = 1
 char = True
 #Hyper parameters
 with open("./save_model/split_data.pickle", "rb") as f:
@@ -39,19 +39,20 @@ vocab_size = len(token_list)
 print(vocab_size)
 #Transformer (Seq2Seq) 모델 --> 우리 Acoustic 모델
 config = Config(token_list)
+config.specaug = False
+config.normalize = True
 model = ASRModel(input_size = input_size,
                 vocab_size = vocab_size,
                 token_list = token_list,
                 config = config,
                 device = device)
 model.to(device)
-model.load_state_dict(torch.load("./save_model/best_ctc.pt", map_location = device))
+model.load_state_dict(torch.load("./save_model/best_ctc_norm_add.pt", map_location = device))
 
 #dim_freeze = Categorical(2)
 
-
-dim_ctc = Real(low = 0.0, high = 1.0, name = "ctc")
-dim_beam = Integer(low = 1, high = 7, name = "beam")
+dim_ctc = Real(low = 0.1, high = 1.0, name = "ctc")
+dim_beam = Integer(low = 1, high = 5, name = "beam")
 dim_penalty = Real(low = 0.2, high = 2.0, name = "penalty")
 
 dimensions = [dim_ctc, dim_beam, dim_penalty]
@@ -80,5 +81,6 @@ search_result = gp_minimize(func = fitness,
 
 print(search_result.x)
 
-with open("./eff_ctc_0.3.pickle", "wb") as f:
+with open("./eff_ctc_norm.pickle", "wb") as f:
     pickle.dump(search_result, f)
+
