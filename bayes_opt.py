@@ -51,9 +51,9 @@ model.load_state_dict(torch.load("./save_model/best_ctc_norm_add.pt", map_locati
 
 #dim_freeze = Categorical(2)
 
-dim_ctc = Real(low = 0.1, high = 1.0, name = "ctc")
+dim_ctc = Real(low = 0.0, high = 1.0, name = "ctc")
 dim_beam = Integer(low = 1, high = 5, name = "beam")
-dim_penalty = Real(low = 0.2, high = 2.0, name = "penalty")
+dim_penalty = Real(low = 0.1, high = 2.0, name = "penalty")
 
 dimensions = [dim_ctc, dim_beam, dim_penalty]
 default_parameters = [0.2, 3, 1.2]
@@ -76,7 +76,7 @@ def fitness(ctc, beam, penalty):
 search_result = gp_minimize(func = fitness, 
                             dimensions = dimensions,
                             acq_func = "EI",
-                            n_calls = 20,
+                            n_calls = 12,
                             x0 = default_parameters)
 
 print(search_result.x)

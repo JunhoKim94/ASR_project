@@ -8,3 +8,4 @@ torch_complex
 pytorch_wpe
 humanfriendly
 scikit-optimize
+editdistance

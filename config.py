@@ -31,8 +31,8 @@ class Config:
 
 class Recog_config:
     def __init__(self):
-        self.ctc_weight = 0 #0.141849
-        self.beam_size = 3
+        self.ctc_weight = 0.0 #0.141849
+        self.beam_size = 5
         self.penalty = 0.2 #0.592332
         self.maxlenratio = 0.8
         self.minlenratio = 0
