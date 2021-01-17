@@ -21,11 +21,13 @@ conda install editdistance
 ## Total progress
 
 1) Preprocess the dataset
-
+![Preprocess](./images/preprocess.JPG)
 2) Models
-
+![Convolutional Neural Network](./images/CNN.JPG)
+![Transformers](./images/Transformers.JPG)
 3) Hyper Parameter Optimize
-
+![Bayesian Optimization](./images/Bayesian Optimization.JPG)
 ## Results
 
 ## Usage
+![Usage](./images/usage.JPG)
