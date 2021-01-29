@@ -1,7 +1,8 @@
 # ASR_project
-This repository created for ASR project. 
+This repository created for ASR Hackathon Competition. 
 
-We will use the sample dataset for our toy model.
+We won the Excellence award in NHN Consortium 2020 AI Training Data Hackathon Competition
+http://hackathon.workpedia.co.kr/
 
 ## Requirements
 ```
