@@ -1,5 +1,5 @@
 save_model/
-/data/sample_data/
+data/sample_data/
 *.pt
 *.pickle
 runs/
