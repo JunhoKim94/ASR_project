@@ -5,9 +5,9 @@ We won the Excellence award in NHN Consortium 2020 AI Training Data Hackathon Co
 http://hackathon.workpedia.co.kr/
 
 
-## Data Set inforamtion
-Training data information is as follows:
-
+## Dataset inforamtion
+Training data information is as follows
+NHN ASR hackerthon dataset (not publicly available now)
 Voice data types consist of men and women(adult, senior, children, foreign languages).
 It is free-talk voice data(total of 200 speakers and approximately 400 hours of data).
 The PCM data information is 16 kHz, one channel, and 16 bits.
