@@ -4,6 +4,15 @@ This repository created for ASR Hackathon Competition.
 We won the Excellence award in NHN Consortium 2020 AI Training Data Hackathon Competition
 http://hackathon.workpedia.co.kr/
 
+
+## Data Set inforamtion
+Training data information is as follows:
+
+Voice data types consist of men and women(adult, senior, children, foreign languages).
+It is free-talk voice data(total of 200 speakers and approximately 400 hours of data).
+The PCM data information is 16 kHz, one channel, and 16 bits.
+
+
 ## Requirements
 ```
 pip install chainer
