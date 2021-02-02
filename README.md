@@ -53,6 +53,18 @@ We used bayesian optimization to find optimal beam size, penalty score, and CTC 
 
 We achieve the 4.5 CER in NHN ASR hackerthon dataset (not publicly available now)
 
+### 1) Our Dataset
+|Dataset|number of dataset|CER|
+|------|---|---|
+|Validation|-|5.2|
+|Test|-|5.5|
+
+### 2) Test Samples
+|Dataset|number of dataset|CER|
+|------|---|---|
+|Test|-|14.5|
+
+
 ## Usage
 
 Input data folder samples are in data folder.
