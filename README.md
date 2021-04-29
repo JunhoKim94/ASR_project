@@ -1,8 +1,10 @@
 # ASR_project
 This repository created for ASR Hackathon Competition. 
 
-We won the Excellence award in NHN Consortium 2020 AI Training Data Hackathon Competition
+We won the Excellence award in NHN Consortium 2020 AI Training Data Hackathon Competition (코로나음성인식 Team)
 http://hackathon.workpedia.co.kr/
+**We customized espnet1, espnet2
+https://github.com/espnet/espnet
 
 
 ## Dataset inforamtion
