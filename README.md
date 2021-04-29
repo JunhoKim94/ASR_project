@@ -8,7 +8,7 @@ http://hackathon.workpedia.co.kr/
 https://github.com/espnet/espnet
 
 
-## Dataset inforamtion
+## Dataset information
 Training data information is as follows
 NHN ASR hackerthon dataset (not publicly available now)
 Voice data types consist of men and women(adult, senior, children, foreign languages).
