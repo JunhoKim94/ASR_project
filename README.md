@@ -33,7 +33,7 @@ conda install editdistance
 
 ## Total progress
 
-### 1) Preprocess the dataset
+### 1) Preprocessing the dataset
 
 ![Preprocess](./images/preprocess.JPG)
 ### 2) Models
@@ -46,7 +46,7 @@ conda install editdistance
 
 ![Transformers](./images/Transformers.JPG)
 
-### 3) Hyper Parameter Optimize
+### 3) Hyper Parameter Optimization
 
 We used bayesian optimization to find optimal beam size, penalty score, and CTC weight to inference model
 
